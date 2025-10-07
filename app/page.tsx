@@ -72,7 +72,7 @@ export default function Home() {
             <div className="relative h-80 rounded-3xl overflow-hidden shadow-xl">
               <Image
                 src="/images/DSC2967-scaled.jpg"
-                alt="Xyra Mae with children"
+                alt="Teacher Mae with children"
                 fill
                 className="object-cover"
               />

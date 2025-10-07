@@ -95,7 +95,7 @@ export default function About() {
             <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/DSC2967-scaled.jpg"
-                alt="Xyra Mae - Founder"
+                alt="Teacher Mae - Founder"
                 fill
                 className="object-cover"
               />
@@ -106,7 +106,7 @@ export default function About() {
                 Our <span className="text-lightCoral">Story</span>
               </h2>
               <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                Mae's Childcare was founded by <strong>Xyra Mae</strong>, an experienced early childhood educator who believes in holistic development. With a passion for nurturing young minds through play and discovery, Mae has dedicated over a decade to creating meaningful learning experiences for children.
+                Mae's Childcare was founded by <strong>Teacher Mae</strong>, an experienced early childhood educator who believes in holistic development. With a passion for nurturing young minds through play and discovery, Mae has dedicated over a decade to creating meaningful learning experiences for children.
               </p>
               <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
                 What started as a small home-based center has grown into a trusted learning space for families in our community. Our commitment to quality care, personalized attention, and creating a home-away-from-home environment has made Mae's Childcare a beloved part of many families' lives.
@@ -119,7 +119,7 @@ export default function About() {
                 <p className="text-navyText font-heading font-semibold text-xl mb-2">
                   "Every child is a gift, and it's our privilege to help them discover their unique potential."
                 </p>
-                <p className="text-navyText/60">— Xyra Mae, Founder</p>
+                <p className="text-navyText/60">— Teacher Mae, Founder</p>
               </div>
             </div>
           </div>

@@ -34,12 +34,12 @@ export default function Staff() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
-            {/* Xyra Mae */}
+            {/* Teacher Mae */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative h-96 min-h-full rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/DSC2967-scaled.jpg"
-                  alt="Xyra Mae - Owner and Head Teacher"
+                  src="/images/teacher1.png"
+                  alt="Teacher Mae - Owner and Head Teacher"
                   fill
                   className="object-cover"
                 />
@@ -50,13 +50,13 @@ export default function Staff() {
                   Owner / Head Teacher
                 </div>
                 <h2 className="text-4xl font-heading font-bold text-navyText mb-6">
-                  Xyra Mae
+                  Teacher Mae
                 </h2>
                 <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                  Xyra Mae is an Early Childhood Education graduate with over <strong>10+ years of experience</strong> working with young children. Her passion for nurturing young minds through play and discovery led her to establish Mae's Childcare.
+                  Teacher Mae is an Early Childhood Education graduate with over <strong>10+ years of experience</strong> working with young children. Her passion for nurturing young minds through play and discovery led her to establish Mae's Childcare.
                 </p>
                 <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                  Xyra Mae believes in creating a warm, family-like environment where every child feels valued and loved. Her holistic approach to development ensures that children not only learn academic skills but also grow emotionally and socially.
+                  Teacher Mae believes in creating a warm, family-like environment where every child feels valued and loved. Her holistic approach to development ensures that children not only learn academic skills but also grow emotionally and socially.
                 </p>
 
                 <div className="bg-gradient-to-br from-pastelYellow to-yellow-100 p-6 rounded-2xl">
@@ -114,9 +114,9 @@ export default function Staff() {
                 </div>
               </div>
 
-              <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl order-1 md:order-2">
+              <div className="relative h-96 min-h-full rounded-3xl overflow-hidden shadow-2xl order-1 md:order-2">
                 <Image
-                  src="/images/AdobeStock_229647792_Resized-1024x752.jpeg"
+                  src="/images/teacher2.png"
                   alt="Teacher Sandara - Preschool Teacher"
                   fill
                   className="object-cover"
@@ -126,9 +126,9 @@ export default function Staff() {
 
             {/* Teacher Yeng */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative h-96 min-h-full rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/the-importance-of-play-in-child-development.jpg"
+                  src="/images/teacher3.png"
                   alt="Teacher Yeng - Toddler Care Specialist"
                   fill
                   className="object-cover"
