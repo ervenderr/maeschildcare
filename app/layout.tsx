@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: 'Mae\'s Childcare is a licensed childcare home in San Francisco offering bilingual education (English & Filipino), art-based learning, and nurturing care for children ages 6 months to 5 years. Licensed #384005044.',
   keywords: 'childcare San Francisco, bilingual childcare, licensed childcare, infant care, toddler program, preschool, San Francisco daycare, Filipino childcare, art-based learning, Hayes Valley childcare',
   icons: {
-    icon: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: '/favicon.png',
+    apple: '/favicon.png',
   },
 }
 
