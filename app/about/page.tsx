@@ -20,9 +20,9 @@ export default function About() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6 animate-scaleIn">
-            <div className="relative w-64 h-32">
+            <div className="relative w-36 h-32 rounded-md bg-creamWhite">
               <Image
-                src="/images/logo-with-name.svg"
+                src="/images/name.png"
                 alt="Mae's Childcare Logo"
                 fill
                 className="object-contain drop-shadow-lg"
@@ -95,7 +95,7 @@ export default function About() {
             <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/DSC2967-scaled.jpg"
-                alt="Mae Santos - Founder"
+                alt="Xyra Mae - Founder"
                 fill
                 className="object-cover"
               />
@@ -106,7 +106,7 @@ export default function About() {
                 Our <span className="text-lightCoral">Story</span>
               </h2>
               <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                Mae's Childcare was founded by <strong>Mae Santos</strong>, an experienced early childhood educator who believes in holistic development. With a passion for nurturing young minds through play and discovery, Mae has dedicated over a decade to creating meaningful learning experiences for children.
+                Mae's Childcare was founded by <strong>Xyra Mae</strong>, an experienced early childhood educator who believes in holistic development. With a passion for nurturing young minds through play and discovery, Mae has dedicated over a decade to creating meaningful learning experiences for children.
               </p>
               <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
                 What started as a small home-based center has grown into a trusted learning space for families in our community. Our commitment to quality care, personalized attention, and creating a home-away-from-home environment has made Mae's Childcare a beloved part of many families' lives.
@@ -119,7 +119,7 @@ export default function About() {
                 <p className="text-navyText font-heading font-semibold text-xl mb-2">
                   "Every child is a gift, and it's our privilege to help them discover their unique potential."
                 </p>
-                <p className="text-navyText/60">— Mae Santos, Founder</p>
+                <p className="text-navyText/60">— Xyra Mae, Founder</p>
               </div>
             </div>
           </div>

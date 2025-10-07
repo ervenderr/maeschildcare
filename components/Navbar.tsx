@@ -15,7 +15,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center hover:scale-105 transition">
             <div className="relative h-25 w-48 sm:h-25 sm:w-64">
               <Image
-                src="/images/name.svg"
+                src="/images/name.png"
                 alt="Mae's Childcare"
                 fill
                 className="object-contain object-left"

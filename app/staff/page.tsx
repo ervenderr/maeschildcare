@@ -34,12 +34,12 @@ export default function Staff() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
-            {/* Mae Santos */}
+            {/* Xyra Mae */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/DSC2967-scaled.jpg"
-                  alt="Mae Santos - Owner and Head Teacher"
+                  alt="Xyra Mae - Owner and Head Teacher"
                   fill
                   className="object-cover"
                 />
@@ -50,13 +50,13 @@ export default function Staff() {
                   Owner / Head Teacher
                 </div>
                 <h2 className="text-4xl font-heading font-bold text-navyText mb-6">
-                  Mae Santos
+                  Xyra Mae
                 </h2>
                 <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                  Mae is an Early Childhood Education graduate with over <strong>10+ years of experience</strong> working with young children. Her passion for nurturing young minds through play and discovery led her to establish Mae's Childcare.
+                  Xyra Mae is an Early Childhood Education graduate with over <strong>10+ years of experience</strong> working with young children. Her passion for nurturing young minds through play and discovery led her to establish Mae's Childcare.
                 </p>
                 <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                  Mae believes in creating a warm, family-like environment where every child feels valued and loved. Her holistic approach to development ensures that children not only learn academic skills but also grow emotionally and socially.
+                  Xyra Mae believes in creating a warm, family-like environment where every child feels valued and loved. Her holistic approach to development ensures that children not only learn academic skills but also grow emotionally and socially.
                 </p>
 
                 <div className="bg-gradient-to-br from-pastelYellow to-yellow-100 p-6 rounded-2xl">
@@ -79,17 +79,17 @@ export default function Staff() {
               </div>
             </div>
 
-            {/* Teacher Liza */}
+            {/* Teacher Sandara */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="order-2 md:order-1">
                 <div className="inline-block bg-softTeal text-white px-4 py-2 rounded-full font-semibold mb-4">
                   Preschool Teacher
                 </div>
                 <h2 className="text-4xl font-heading font-bold text-navyText mb-6">
-                  Teacher Liza
+                  Teacher Sandara
                 </h2>
                 <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                  Teacher Liza is an expert in creative arts and music education. With her vibrant energy and artistic flair, she brings joy and creativity to the classroom every single day.
+                  Teacher Sandara is an expert in creative arts and music education. With her vibrant energy and artistic flair, she brings joy and creativity to the classroom every single day.
                 </p>
                 <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
                   She loves helping children express themselves through drawing, painting, and singing. Her classroom is always filled with colorful artwork and the sound of happy children making music together.
@@ -117,19 +117,19 @@ export default function Staff() {
               <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl order-1 md:order-2">
                 <Image
                   src="/images/AdobeStock_229647792_Resized-1024x752.jpeg"
-                  alt="Teacher Liza - Preschool Teacher"
+                  alt="Teacher Sandara - Preschool Teacher"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
 
-            {/* Teacher Rhea */}
+            {/* Teacher Yeng */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/the-importance-of-play-in-child-development.jpg"
-                  alt="Teacher Rhea - Toddler Care Specialist"
+                  alt="Teacher Yeng - Toddler Care Specialist"
                   fill
                   className="object-cover"
                 />
@@ -140,10 +140,10 @@ export default function Staff() {
                   Toddler Care Specialist
                 </div>
                 <h2 className="text-4xl font-heading font-bold text-navyText mb-6">
-                  Teacher Rhea
+                  Teacher Yeng
                 </h2>
                 <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                  Teacher Rhea is gentle, patient, and full of energy—the perfect combination for working with toddlers! She has a special gift for connecting with young children and making them feel safe and confident.
+                  Teacher Yeng is gentle, patient, and full of energy—the perfect combination for working with toddlers! She has a special gift for connecting with young children and making them feel safe and confident.
                 </p>
                 <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
                   Her calm demeanor and encouraging approach help toddlers build confidence and independence as they explore the world around them. She celebrates every small victory and milestone with genuine joy.

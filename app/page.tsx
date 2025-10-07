@@ -72,7 +72,7 @@ export default function Home() {
             <div className="relative h-80 rounded-3xl overflow-hidden shadow-xl">
               <Image
                 src="/images/DSC2967-scaled.jpg"
-                alt="Mae Santos with children"
+                alt="Xyra Mae with children"
                 fill
                 className="object-cover"
               />
@@ -188,7 +188,7 @@ export default function Home() {
             </div>
 
             <div className="bg-gradient-to-br from-lightCoral/30 to-red-50 p-8 rounded-3xl shadow-lg border-2 border-lightCoral hover-lift transition">
-              <div className="text-5xl mb-4">👨‍⚕️</div>
+              <div className="text-5xl mb-4">👩🏻‍💼</div>
               <h3 className="text-xl font-heading font-bold text-navyText mb-3">Certified Staff</h3>
               <p className="text-navyText/80">
                 All staff are CPR and First Aid certified and trained in early childhood development and emergency response.

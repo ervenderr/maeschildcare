@@ -9,12 +9,12 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <div className="relative h-16 w-56 mb-4">
+              <div className="relative h-16 w-18 mb-4 bg-creamWhite rounded-md">
                 <Image
-                  src="/images/name.svg"
+                  src="/images/name.png"
                   alt="Mae's Childcare"
                   fill
-                  className="object-contain object-left"
+                  className="object-contain object-center"
                 />
               </div>
             </div>
@@ -49,11 +49,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start">
                 <span className="mr-2">📍</span>
-                <span>123 Sunshine Street, Zamboanga City, Philippines</span>
+                <span>949 Grove St, San Francisco, CA 94117</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">🕒</span>
-                <span>Monday–Friday, 8:00 AM–6:00 PM</span>
+                <span>Monday–Friday, 8:30 AM–5:30 PM</span>
               </li>
             </ul>
           </div>
