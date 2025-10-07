@@ -13,19 +13,15 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center hover:scale-105 transition">
-            <div className="relative w-12 h-12">
+            <div className="relative h-25 w-48 sm:h-25 sm:w-64">
               <Image
-                src="/images/logo-only.svg"
-                alt="Mae's Childcare Logo"
+                src="/images/name.svg"
+                alt="Mae's Childcare"
                 fill
-                className="object-contain"
+                className="object-contain object-left"
                 priority
               />
             </div>
-            <span className="text-2xl lg:text-3xl logo-text">
-              <span className="text-lightCoral">Mae's</span>
-              <span className="text-softTeal"> Childcare</span>
-            </span>
           </Link>
 
           {/* Desktop Menu */}

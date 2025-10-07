@@ -10,7 +10,14 @@ export default function Programs() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-pastelYellow to-lightCoral py-16">
+      <section className="relative bg-gradient-to-br from-pastelYellow to-lightCoral py-16 overflow-hidden">
+        {/* Decorative SVGs */}
+        <div className="absolute top-10 right-10 w-40 h-40 opacity-55 animate-float">
+          <Image src="/images/kids head.svg" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute bottom-10 left-10 w-36 h-36 opacity-50 animate-float animation-delay-200">
+          <Image src="/images/flower.svg" alt="" fill className="object-contain" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-heading font-bold text-white mb-4 animate-scaleIn">
             Our Programs
@@ -31,7 +38,11 @@ export default function Programs() {
       </section>
 
       {/* Infant Care */}
-      <section className="py-16 bg-white">
+      <section className="relative py-16 bg-white overflow-hidden">
+        {/* Decorative SVG */}
+        <div className="absolute bottom-10 right-10 w-48 h-48 opacity-45 animate-float animation-delay-300">
+          <Image src="/images/baby with ball.svg" alt="" fill className="object-contain" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl animate-slideInLeft hover-lift">
@@ -73,18 +84,17 @@ export default function Programs() {
                   <span className="text-navyText/80">Daily reports on feeding, diapering, and activities</span>
                 </li>
               </ul>
-
-              <div className="bg-gradient-to-br from-pastelYellow to-yellow-100 p-6 rounded-2xl">
-                <p className="text-navyText font-heading font-semibold text-2xl">₱12,000/month</p>
-                <p className="text-navyText/70">8:00 AM – 4:00 PM</p>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Toddler Program */}
-      <section className="py-16 bg-gradient-to-br from-creamWhite to-softTeal/10">
+      <section className="relative py-16 bg-gradient-to-br from-creamWhite to-softTeal/10 overflow-hidden">
+        {/* Decorative SVG */}
+        <div className="absolute top-10 left-10 w-40 h-40 opacity-50 animate-float">
+          <Image src="/images/book.svg" alt="" fill className="object-contain" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 animate-slideInLeft">
@@ -117,11 +127,6 @@ export default function Programs() {
                   <span className="text-navyText/80">Social interaction and friendship building</span>
                 </li>
               </ul>
-
-              <div className="bg-gradient-to-br from-softTeal to-green-100 p-6 rounded-2xl">
-                <p className="text-navyText font-heading font-semibold text-2xl">₱10,000/month</p>
-                <p className="text-navyText/70">8:00 AM – 4:00 PM</p>
-              </div>
             </div>
 
             <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl order-1 md:order-2 animate-slideInRight hover-lift">
@@ -179,68 +184,11 @@ export default function Programs() {
                   <span className="text-navyText/80">Social lessons and school readiness skills</span>
                 </li>
               </ul>
-
-              <div className="bg-gradient-to-br from-skyBlue to-blue-100 p-6 rounded-2xl">
-                <p className="text-navyText font-heading font-semibold text-2xl">₱9,000/month</p>
-                <p className="text-navyText/70">8:00 AM – 4:00 PM</p>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* After School Care */}
-      <section className="py-16 bg-gradient-to-br from-creamWhite to-lightCoral/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 animate-slideInLeft">
-              <div className="inline-block bg-lightCoral text-white px-4 py-2 rounded-full font-semibold mb-4 animate-scaleIn">
-                School Age
-              </div>
-              <h2 className="text-4xl font-heading font-bold text-navyText mb-6">
-                <span className="text-5xl animate-bounce">⚽</span> After School Care
-              </h2>
-              <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                Our after school program provides a safe, engaging environment for school-age children after their regular school day. We offer homework support, recreational activities, and healthy snacks.
-              </p>
-
-              <h3 className="text-xl font-heading font-bold text-navyText mb-3">What We Offer:</h3>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="text-lightCoral mr-2">✓</span>
-                  <span className="text-navyText/80">Homework help and quiet study time</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-lightCoral mr-2">✓</span>
-                  <span className="text-navyText/80">Supervised outdoor and indoor playtime</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-lightCoral mr-2">✓</span>
-                  <span className="text-navyText/80">Healthy afternoon snacks provided</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-lightCoral mr-2">✓</span>
-                  <span className="text-navyText/80">Arts, crafts, and recreational activities</span>
-                </li>
-              </ul>
-
-              <div className="bg-gradient-to-br from-lightCoral to-red-100 p-6 rounded-2xl">
-                <p className="text-navyText font-heading font-semibold text-2xl">₱4,000/month</p>
-                <p className="text-navyText/70">4:00 PM – 6:00 PM</p>
-              </div>
-            </div>
-
-            <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl order-1 md:order-2 animate-slideInRight hover-lift">
-              <Image
-                src="/images/50b2a597-79f8-4206-907c-0d895c51c242.jpg"
-                alt="After school care"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Special Arrangements */}
       <section className="py-16 bg-navyText text-white">

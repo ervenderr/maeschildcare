@@ -6,6 +6,16 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-pastelYellow via-creamWhite to-skyBlue py-20 overflow-hidden">
+        {/* Floating Decorative SVGs */}
+        <div className="absolute top-10 right-10 w-32 h-32 opacity-60 animate-float">
+          <Image src="/images/butterfly.svg" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute top-32 left-10 w-40 h-40 opacity-50 animate-float animation-delay-200">
+          <Image src="/images/cloud.svg" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute bottom-20 right-32 w-28 h-28 opacity-55 animate-float animation-delay-400">
+          <Image src="/images/flower.svg" alt="" fill className="object-contain" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -13,7 +23,7 @@ export default function Home() {
                 Where Learning and Care <span className="text-lightCoral">Grow Together</span>
               </h1>
               <p className="text-xl text-navyText/80">
-                Mae's Childcare provides a safe, nurturing, and fun environment for your little ones to learn and grow every day.
+                A licensed childcare home in San Francisco providing bilingual education, art-based learning, and nurturing care for children ages 6 months to 5 years.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -30,9 +40,10 @@ export default function Home() {
                 </Link>
               </div>
               <div className="bg-white/60 backdrop-blur-sm p-4 rounded-2xl shadow-md animate-fadeInUp animation-delay-400 animate-float">
-                <p className="text-navyText font-semibold">📅 Now Enrolling!</p>
-                <p className="text-sm text-navyText/70">Children Ages 6 months - 5 years old</p>
-                <p className="text-sm text-navyText/70">Open Monday - Friday, 8:30 AM - 5:00 PM</p>
+                <p className="text-navyText font-semibold">📅 Now Enrolling! Limited Spots Available</p>
+                <p className="text-sm text-navyText/70">🎯 Capacity: 8 children only</p>
+                <p className="text-sm text-navyText/70">🕐 Monday - Friday, 8:30 AM - 5:30 PM</p>
+                <p className="text-sm text-navyText/70">🌐 Bilingual: English & Filipino</p>
               </div>
             </div>
             <div className="relative animate-fadeIn animation-delay-300">
@@ -51,7 +62,11 @@ export default function Home() {
       </section>
 
       {/* About Preview */}
-      <section className="py-16 bg-creamWhite">
+      <section className="relative py-16 bg-creamWhite overflow-hidden">
+        {/* Decorative SVG */}
+        <div className="absolute bottom-10 left-5 w-48 h-48 opacity-40 animate-float">
+          <Image src="/images/baby with ball.svg" alt="" fill className="object-contain" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-80 rounded-3xl overflow-hidden shadow-xl">
@@ -67,10 +82,10 @@ export default function Home() {
                 Welcome to <span className="text-softTeal">Mae's Childcare</span>
               </h2>
               <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                At Mae's Childcare, our mission is to provide a nurturing environment where children can learn, play, and grow at their own pace. We believe every child deserves personalized care and joyful learning experiences.
+                At Mae's Childcare, we provide a nurturing licensed childcare home where children explore, learn, and grow through our Creative Curriculum. Our art-based learning approach encourages creativity and hands-on discovery.
               </p>
               <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                Founded by Mae Santos, an experienced early childhood educator, our center has grown from a small home-based program into a trusted learning space for families in Zamboanga City.
+                We offer bilingual education in English and Filipino, helping children build strong language skills from an early age. With CPR and First Aid certified staff, nutritious daily meals, and a mixed-age environment that promotes cooperation and empathy, we create a joyful, safe space for up to 8 children in San Francisco.
               </p>
               <Link
                 href="/about"
@@ -84,7 +99,14 @@ export default function Home() {
       </section>
 
       {/* Programs Highlight */}
-      <section className="py-16 bg-white">
+      <section className="relative py-16 bg-white overflow-hidden">
+        {/* Decorative SVGs */}
+        <div className="absolute top-20 right-10 w-40 h-40 opacity-50 animate-float">
+          <Image src="/images/book.svg" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute bottom-10 left-10 w-36 h-36 opacity-45 animate-float animation-delay-300">
+          <Image src="/images/kids head.svg" alt="" fill className="object-contain" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-4">
             Our <span className="text-lightCoral">Programs</span>
@@ -93,14 +115,13 @@ export default function Home() {
             Age-appropriate programs designed to support every stage of development
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Infant Care */}
             <div className="bg-gradient-to-br from-pastelYellow to-yellow-100 p-8 rounded-3xl shadow-lg hover:shadow-xl hover-lift transition animate-scaleIn">
               <div className="text-5xl mb-4 animate-bounce">👶</div>
               <h3 className="text-2xl font-heading font-bold text-navyText mb-3">Infant Care</h3>
-              <p className="text-sm text-navyText/70 mb-2">0–2 years</p>
-              <p className="text-navyText/80 mb-4">Gentle care and early stimulation for your precious little one.</p>
-              <p className="font-semibold text-navyText">₱12,000/month</p>
+              <p className="text-sm text-navyText/70 mb-2">6 months – 2 years</p>
+              <p className="text-navyText/80">Gentle care and early stimulation for your precious little one in a nurturing environment with individualized attention.</p>
             </div>
 
             {/* Toddler Program */}
@@ -108,8 +129,7 @@ export default function Home() {
               <div className="text-5xl mb-4 animate-bounce animation-delay-200">🧸</div>
               <h3 className="text-2xl font-heading font-bold text-navyText mb-3">Toddler Program</h3>
               <p className="text-sm text-navyText/70 mb-2">2–4 years</p>
-              <p className="text-navyText/80 mb-4">Play-based learning with guided activities and motor skill development.</p>
-              <p className="font-semibold text-navyText">₱10,000/month</p>
+              <p className="text-navyText/80">Play-based learning with guided activities and motor skill development through exploration and discovery.</p>
             </div>
 
             {/* Preschool */}
@@ -117,17 +137,7 @@ export default function Home() {
               <div className="text-5xl mb-4 animate-bounce animation-delay-400">📚</div>
               <h3 className="text-2xl font-heading font-bold text-navyText mb-3">Preschool</h3>
               <p className="text-sm text-navyText/70 mb-2">4–5 years</p>
-              <p className="text-navyText/80 mb-4">Preparing your child for school with fun, structured lessons.</p>
-              <p className="font-semibold text-navyText">₱9,000/month</p>
-            </div>
-
-            {/* After School Care */}
-            <div className="bg-gradient-to-br from-lightCoral to-red-100 p-8 rounded-3xl shadow-lg hover:shadow-xl hover-lift transition animate-scaleIn animation-delay-300">
-              <div className="text-5xl mb-4 animate-bounce">⚽</div>
-              <h3 className="text-2xl font-heading font-bold text-navyText mb-3">After School Care</h3>
-              <p className="text-sm text-navyText/70 mb-2">4:00 PM – 6:00 PM</p>
-              <p className="text-navyText/80 mb-4">Homework help and supervised playtime in a safe environment.</p>
-              <p className="font-semibold text-navyText">₱4,000/month</p>
+              <p className="text-navyText/80">Preparing your child for kindergarten with structured lessons, social skills, and school readiness activities.</p>
             </div>
           </div>
 
@@ -142,8 +152,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Choose Us */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-4">
+            Why Choose <span className="text-lightCoral">Mae's Childcare?</span>
+          </h2>
+          <p className="text-center text-navyText/70 mb-12 text-lg max-w-3xl mx-auto">
+            We're more than just childcare—we're a nurturing community dedicated to your child's growth and happiness
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gradient-to-br from-pastelYellow/30 to-yellow-50 p-8 rounded-3xl shadow-lg border-2 border-pastelYellow hover-lift transition">
+              <div className="text-5xl mb-4">✅</div>
+              <h3 className="text-xl font-heading font-bold text-navyText mb-3">Fully Licensed & Regulated</h3>
+              <p className="text-navyText/80">
+                Licensed childcare home (License #384005044) meeting all state requirements. Your child's safety is our top priority.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-skyBlue/30 to-blue-50 p-8 rounded-3xl shadow-lg border-2 border-skyBlue hover-lift transition">
+              <div className="text-5xl mb-4">🌍</div>
+              <h3 className="text-xl font-heading font-bold text-navyText mb-3">Bilingual Education</h3>
+              <p className="text-navyText/80">
+                English and Filipino (Tagalog) language immersion helps children develop strong communication skills from an early age.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-softTeal/30 to-green-50 p-8 rounded-3xl shadow-lg border-2 border-softTeal hover-lift transition">
+              <div className="text-5xl mb-4">🎨</div>
+              <h3 className="text-xl font-heading font-bold text-navyText mb-3">Creative Curriculum</h3>
+              <p className="text-navyText/80">
+                Art-based learning approach that encourages creativity, critical thinking, and hands-on exploration.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-lightCoral/30 to-red-50 p-8 rounded-3xl shadow-lg border-2 border-lightCoral hover-lift transition">
+              <div className="text-5xl mb-4">👨‍⚕️</div>
+              <h3 className="text-xl font-heading font-bold text-navyText mb-3">Certified Staff</h3>
+              <p className="text-navyText/80">
+                All staff are CPR and First Aid certified and trained in early childhood development and emergency response.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-pastelYellow/30 to-yellow-50 p-8 rounded-3xl shadow-lg border-2 border-pastelYellow hover-lift transition">
+              <div className="text-5xl mb-4">🍎</div>
+              <h3 className="text-xl font-heading font-bold text-navyText mb-3">Nutritious Meals</h3>
+              <p className="text-navyText/80">
+                Healthy, balanced meals provided daily, catering to dietary needs and preferences to keep your child energized.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-skyBlue/30 to-blue-50 p-8 rounded-3xl shadow-lg border-2 border-skyBlue hover-lift transition">
+              <div className="text-5xl mb-4">🏡</div>
+              <h3 className="text-xl font-heading font-bold text-navyText mb-3">Small Group Setting</h3>
+              <p className="text-navyText/80">
+                With a capacity of only 8 children, we provide personalized attention and create a home-like, nurturing environment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Preview */}
-      <section className="py-16 bg-gradient-to-br from-creamWhite to-pastelYellow/30">
+      <section className="relative py-16 bg-gradient-to-br from-creamWhite to-pastelYellow/30 overflow-hidden">
+        {/* Decorative SVGs */}
+        <div className="absolute top-10 left-20 w-36 h-36 opacity-55 animate-float">
+          <Image src="/images/butterfly.svg" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute bottom-10 right-20 w-40 h-40 opacity-50 animate-float animation-delay-200">
+          <Image src="/images/flower.svg" alt="" fill className="object-contain" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-4">
             See Our <span className="text-softTeal">Happy Moments</span>
@@ -236,8 +315,8 @@ export default function Home() {
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
               <div className="text-4xl mb-3">📍</div>
-              <p className="text-lg">123 Sunshine Street</p>
-              <p className="text-lg">Zamboanga City, Philippines</p>
+              <p className="text-lg">949 Grove Street</p>
+              <p className="text-lg">San Francisco, CA 94117</p>
             </div>
           </div>
 

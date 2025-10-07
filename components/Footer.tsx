@@ -8,19 +8,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-10 h-10 bg-white rounded-full p-1">
+            <div className="mb-4">
+              <div className="relative h-16 w-56 mb-4">
                 <Image
-                  src="/images/logo-only.svg"
-                  alt="Mae's Childcare Logo"
+                  src="/images/name.svg"
+                  alt="Mae's Childcare"
                   fill
-                  className="object-contain"
+                  className="object-contain object-left"
                 />
               </div>
-              <h3 className="text-2xl logo-text">
-                <span className="text-lightCoral">Mae's</span>
-                <span className="text-softTeal"> Childcare</span>
-              </h3>
             </div>
             <p className="text-gray-300 italic font-medium">Where Learning and Care Grow Together</p>
           </div>

@@ -14,9 +14,26 @@ export default function Enrollment() {
           <h1 className="text-5xl font-heading font-bold text-white mb-4 animate-scaleIn">
             Enrollment Information
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto animate-scaleIn">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto animate-scaleIn mb-6">
             Join the Mae's Childcare family today!
           </p>
+          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-xl max-w-3xl mx-auto animate-scaleIn animation-delay-200">
+            <h3 className="text-2xl font-heading font-bold text-navyText mb-3">✅ Licensed Childcare Home</h3>
+            <div className="grid md:grid-cols-3 gap-4 text-navyText/80">
+              <div>
+                <p className="font-semibold">License #</p>
+                <p className="text-lg">384005044</p>
+              </div>
+              <div>
+                <p className="font-semibold">Capacity</p>
+                <p className="text-lg">8 Children</p>
+              </div>
+              <div>
+                <p className="font-semibold">Issued</p>
+                <p className="text-lg">October 3, 2025</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -117,14 +134,14 @@ export default function Enrollment() {
         </div>
       </section>
 
-      {/* Tuition and Schedule */}
+      {/* Schedule Information */}
       <section className="py-16 bg-gradient-to-br from-creamWhite to-skyBlue/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-4">
-            Tuition & <span className="text-softTeal">Schedule</span>
+            Our <span className="text-softTeal">Schedule</span>
           </h2>
           <p className="text-center text-navyText/70 mb-12 text-lg">
-            Transparent pricing with no hidden fees
+            Flexible scheduling options to fit your family's needs
           </p>
 
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
@@ -133,50 +150,42 @@ export default function Enrollment() {
                 <thead>
                   <tr className="bg-navyText text-white">
                     <th className="px-8 py-4 text-left font-heading text-lg">Program</th>
+                    <th className="px-8 py-4 text-left font-heading text-lg">Age Range</th>
                     <th className="px-8 py-4 text-left font-heading text-lg">Hours</th>
-                    <th className="px-8 py-4 text-left font-heading text-lg">Monthly Fee</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-gray-200 hover:bg-pastelYellow/20 transition">
                     <td className="px-8 py-6">
                       <div className="font-heading font-bold text-navyText text-lg">Infant Care</div>
-                      <div className="text-sm text-navyText/60">0–2 years</div>
                     </td>
-                    <td className="px-8 py-6 text-navyText/80">8:00 AM – 4:00 PM</td>
-                    <td className="px-8 py-6 font-heading font-bold text-navyText text-xl">₱12,000</td>
+                    <td className="px-8 py-6 text-navyText/80">6 months – 2 years</td>
+                    <td className="px-8 py-6 text-navyText/80">8:30 AM – 5:30 PM</td>
                   </tr>
                   <tr className="border-b border-gray-200 hover:bg-softTeal/20 transition">
                     <td className="px-8 py-6">
                       <div className="font-heading font-bold text-navyText text-lg">Toddler Program</div>
-                      <div className="text-sm text-navyText/60">2–4 years</div>
                     </td>
-                    <td className="px-8 py-6 text-navyText/80">8:00 AM – 4:00 PM</td>
-                    <td className="px-8 py-6 font-heading font-bold text-navyText text-xl">₱10,000</td>
+                    <td className="px-8 py-6 text-navyText/80">2 – 4 years</td>
+                    <td className="px-8 py-6 text-navyText/80">8:30 AM – 5:30 PM</td>
                   </tr>
-                  <tr className="border-b border-gray-200 hover:bg-skyBlue/20 transition">
+                  <tr className="hover:bg-skyBlue/20 transition">
                     <td className="px-8 py-6">
                       <div className="font-heading font-bold text-navyText text-lg">Preschool</div>
-                      <div className="text-sm text-navyText/60">4–5 years</div>
                     </td>
-                    <td className="px-8 py-6 text-navyText/80">8:00 AM – 4:00 PM</td>
-                    <td className="px-8 py-6 font-heading font-bold text-navyText text-xl">₱9,000</td>
-                  </tr>
-                  <tr className="hover:bg-lightCoral/20 transition">
-                    <td className="px-8 py-6">
-                      <div className="font-heading font-bold text-navyText text-lg">After School Care</div>
-                      <div className="text-sm text-navyText/60">School age</div>
-                    </td>
-                    <td className="px-8 py-6 text-navyText/80">4:00 PM – 6:00 PM</td>
-                    <td className="px-8 py-6 font-heading font-bold text-navyText text-xl">₱4,000</td>
+                    <td className="px-8 py-6 text-navyText/80">4 – 5 years</td>
+                    <td className="px-8 py-6 text-navyText/80">8:30 AM – 5:30 PM</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <div className="bg-gradient-to-br from-pastelYellow to-lightCoral/20 p-8">
-              <p className="text-navyText text-center text-lg">
-                <strong>Note:</strong> For special arrangements or part-time enrollment, please contact us for customized pricing.
+              <p className="text-navyText text-center text-lg mb-4">
+                <strong>📞 Contact us for pricing and availability</strong>
+              </p>
+              <p className="text-navyText/80 text-center">
+                We offer both full-time and part-time scheduling options. Please reach out to discuss rates and find the perfect fit for your family.
               </p>
             </div>
           </div>

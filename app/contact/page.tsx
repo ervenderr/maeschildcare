@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,14 @@ export default function Contact() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-lightCoral to-pastelYellow py-16">
+      <section className="relative bg-gradient-to-br from-lightCoral to-pastelYellow py-16 overflow-hidden">
+        {/* Decorative SVGs */}
+        <div className="absolute top-10 right-10 w-36 h-36 opacity-60 animate-float">
+          <Image src="/images/butterfly.svg" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute bottom-10 left-10 w-40 h-40 opacity-55 animate-float animation-delay-200">
+          <Image src="/images/flower.svg" alt="" fill className="object-contain" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-heading font-bold text-white mb-4 animate-scaleIn">
             Get in Touch
@@ -42,7 +50,11 @@ export default function Contact() {
       </section>
 
       {/* Contact Form and Info */}
-      <section className="py-16 bg-creamWhite">
+      <section className="relative py-16 bg-creamWhite overflow-hidden">
+        {/* Decorative SVG */}
+        <div className="absolute bottom-10 right-5 w-44 h-44 opacity-45 animate-float animation-delay-300">
+          <Image src="/images/kids head.svg" alt="" fill className="object-contain" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -169,8 +181,8 @@ export default function Contact() {
                     <div className="text-4xl">📍</div>
                     <div>
                       <h3 className="font-heading font-bold text-navyText text-xl mb-2">Address</h3>
-                      <p className="text-navyText/80">123 Sunshine Street</p>
-                      <p className="text-navyText/80">Zamboanga City, Philippines</p>
+                      <p className="text-navyText/80">949 Grove Street</p>
+                      <p className="text-navyText/80">San Francisco, CA 94117</p>
                     </div>
                   </div>
                 </div>
@@ -181,8 +193,8 @@ export default function Contact() {
                     <div>
                       <h3 className="font-heading font-bold text-navyText text-xl mb-2">Operating Hours</h3>
                       <p className="text-navyText/80">Monday – Friday</p>
-                      <p className="text-navyText/80">8:00 AM – 6:00 PM</p>
-                      <p className="text-sm text-navyText/60 mt-2">Closed weekends and public holidays</p>
+                      <p className="text-navyText/80">8:30 AM – 5:30 PM</p>
+                      <p className="text-sm text-navyText/60 mt-2">Full Calendar Year</p>
                     </div>
                   </div>
                 </div>
@@ -207,7 +219,7 @@ export default function Contact() {
 
           <div className="rounded-3xl overflow-hidden shadow-2xl h-96">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.0!2d122.0790!3d6.9214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTUnMTcuMCJOIDEyMsKwMDQnNDQuNCJF!5e0!3m2!1sen!2sph!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3166734123746!2d-122.43905368468218!3d37.77381397975826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580a3a14dc72b%3A0x3b1aa39f6e1f2c5e!2s949%20Grove%20St%2C%20San%20Francisco%2C%20CA%2094117!5e0!3m2!1sen!2sus!4v1234567890"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -219,7 +231,7 @@ export default function Contact() {
           </div>
 
           <p className="text-center text-navyText/60 mt-6">
-            Located in the heart of Zamboanga City, easily accessible from all major areas
+            Located in the vibrant Hayes Valley neighborhood of San Francisco, easily accessible and close to public transit
           </p>
         </div>
       </section>

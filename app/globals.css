@@ -2,12 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
 
 @theme {
-  --color-pastelYellow: #FFE9A9;
-  --color-softTeal: #A8E6CF;
-  --color-lightCoral: #FF8B94;
+  /* Updated colors to match name.svg logo */
+  --color-brightOrange: #FF6B35;
+  --color-brightTeal: #2AB7CA;
+  --color-goldenYellow: #FED766;
+  --color-deepNavy: #004E89;
   --color-creamWhite: #FFF9F0;
   --color-skyBlue: #AEDFF7;
-  --color-navyText: #2A3A4B;
+
+  /* Legacy color names for compatibility */
+  --color-lightCoral: #FF6B35;
+  --color-softTeal: #2AB7CA;
+  --color-pastelYellow: #FED766;
+  --color-navyText: #004E89;
 
   --font-family-heading: 'Fredoka', 'Quicksand', sans-serif;
   --font-family-body: 'Nunito', 'Open Sans', sans-serif;
@@ -15,7 +22,7 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  color: #2A3A4B;
+  color: #004E89;
 }
 
 h1, h2, h3, h4, h5, h6 {

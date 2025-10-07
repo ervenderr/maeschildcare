@@ -3,14 +3,21 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "About Us - Mae's Childcare",
-  description: 'Learn about Mae\'s Childcare mission, philosophy, and our story of providing quality childcare in Zamboanga City.',
+  description: 'Learn about Mae\'s Childcare mission, philosophy, and our story of providing quality bilingual childcare in San Francisco, CA.',
 }
 
 export default function About() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-softTeal to-skyBlue py-16">
+      <section className="relative bg-gradient-to-br from-softTeal to-skyBlue py-16 overflow-hidden">
+        {/* Decorative SVGs */}
+        <div className="absolute top-10 left-10 w-36 h-36 opacity-55 animate-float">
+          <Image src="/images/butterfly.svg" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 opacity-50 animate-float animation-delay-200">
+          <Image src="/images/cloud.svg" alt="" fill className="object-contain" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6 animate-scaleIn">
             <div className="relative w-64 h-32">
@@ -113,6 +120,89 @@ export default function About() {
                   "Every child is a gift, and it's our privilege to help them discover their unique potential."
                 </p>
                 <p className="text-navyText/60">— Mae Santos, Founder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Curriculum */}
+      <section className="relative py-16 bg-white overflow-hidden">
+        {/* Decorative SVGs */}
+        <div className="absolute top-20 right-5 w-40 h-40 opacity-50 animate-float">
+          <Image src="/images/book.svg" alt="" fill className="object-contain" />
+        </div>
+        <div className="absolute bottom-20 left-5 w-48 h-48 opacity-45 animate-float animation-delay-300">
+          <Image src="/images/baby with ball.svg" alt="" fill className="object-contain" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-4">
+            Our <span className="text-lightCoral">Curriculum</span>
+          </h2>
+          <p className="text-center text-navyText/70 mb-12 text-lg max-w-3xl mx-auto">
+            We use a Creative Curriculum approach that makes learning joyful and meaningful for every child
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-gradient-to-br from-pastelYellow to-yellow-50 p-8 rounded-3xl shadow-lg hover-lift transition">
+              <div className="text-5xl mb-4">🎨</div>
+              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">Art-Based Learning</h3>
+              <p className="text-navyText/80 leading-relaxed">
+                Our program introduces children to letters, numbers, shapes, and colors through hands-on art and playful learning. We encourage creativity through art activities that inspire imagination and self-expression.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-skyBlue to-blue-50 p-8 rounded-3xl shadow-lg hover-lift transition">
+              <div className="text-5xl mb-4">🌍</div>
+              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">Bilingual Immersion</h3>
+              <p className="text-navyText/80 leading-relaxed">
+                We encourage bilingual learning in Filipino (Tagalog) and English, helping children build early language skills that will benefit them throughout their lives. Language immersion builds strong communication abilities.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-softTeal to-green-50 p-8 rounded-3xl shadow-lg hover-lift transition">
+              <div className="text-5xl mb-4">🧸</div>
+              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">Age-Appropriate Play</h3>
+              <p className="text-navyText/80 leading-relaxed">
+                Infants and toddlers explore with age-appropriate toys that inspire curiosity and creativity. Our mixed-age environment promotes cooperation, empathy, and peer learning among children.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-lightCoral to-red-50 p-8 rounded-3xl shadow-lg hover-lift transition">
+              <div className="text-5xl mb-4">🎵</div>
+              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">Daily Enrichment</h3>
+              <p className="text-navyText/80 leading-relaxed">
+                Each day is filled with fun and enriching activities—from alphabet and number time to arts and crafts, reading, music, movement, and playtime—all designed to make learning joyful!
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-pastelYellow/20 to-skyBlue/20 p-10 rounded-3xl">
+            <h3 className="text-3xl font-heading font-bold text-navyText mb-6 text-center">Program Highlights</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">✓</span>
+                <p className="text-lg text-navyText/80"><strong>Art-Based Learning</strong> – Encouraging creativity through hands-on art activities</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">✓</span>
+                <p className="text-lg text-navyText/80"><strong>Creative Curriculum</strong> – A well-rounded approach supporting every child's development</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">✓</span>
+                <p className="text-lg text-navyText/80"><strong>Language Immersion</strong> – Building communication skills in English and Filipino</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">✓</span>
+                <p className="text-lg text-navyText/80"><strong>Movement, Music & Academics</strong> – Blending play, rhythm, and learning</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">✓</span>
+                <p className="text-lg text-navyText/80"><strong>Mixed-Age Environment</strong> – Promoting cooperation and peer learning</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">✓</span>
+                <p className="text-lg text-navyText/80"><strong>Nutritious Meals</strong> – Daily healthy meals provided</p>
               </div>
             </div>
           </div>

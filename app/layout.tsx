@@ -4,9 +4,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: "Mae's Childcare - Where Learning and Care Grow Together",
-  description: 'Mae\'s Childcare provides a safe, nurturing, and fun environment for your little ones to learn and grow every day in Zamboanga City, Philippines.',
-  keywords: 'childcare, daycare, preschool, infant care, toddler program, after school care, Zamboanga City',
+  title: "Mae's Childcare - Licensed Bilingual Childcare in San Francisco",
+  description: 'Mae\'s Childcare is a licensed childcare home in San Francisco offering bilingual education (English & Filipino), art-based learning, and nurturing care for children ages 6 months to 5 years. Licensed #384005044.',
+  keywords: 'childcare San Francisco, bilingual childcare, licensed childcare, infant care, toddler program, preschool, San Francisco daycare, Filipino childcare, art-based learning, Hayes Valley childcare',
   icons: {
     icon: '/favicon.svg',
     apple: '/favicon.svg',
