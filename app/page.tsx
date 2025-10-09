@@ -23,7 +23,7 @@ export default function Home() {
                 Where Learning and Care <span className="text-lightCoral">Grow Together</span>
               </h1>
               <p className="text-xl text-navyText/80">
-                A licensed childcare home in San Francisco providing bilingual education, art-based learning, and nurturing care for children ages 6 months to 5 years.
+                A licensed childcare home in San Francisco providing bilingual education, art-based learning, and nurturing care for children ages 8 months to 5 years.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -120,7 +120,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-pastelYellow to-yellow-100 p-8 rounded-3xl shadow-lg hover:shadow-xl hover-lift transition animate-scaleIn">
               <div className="text-5xl mb-4 animate-bounce">👶</div>
               <h3 className="text-2xl font-heading font-bold text-navyText mb-3">Infant Care</h3>
-              <p className="text-sm text-navyText/70 mb-2">6 months – 2 years</p>
+              <p className="text-sm text-navyText/70 mb-2">8 months – 2 years</p>
               <p className="text-navyText/80">Gentle care and early stimulation for your precious little one in a nurturing environment with individualized attention.</p>
             </div>
 

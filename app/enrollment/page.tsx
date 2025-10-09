@@ -159,7 +159,7 @@ export default function Enrollment() {
                     <td className="px-8 py-6">
                       <div className="font-heading font-bold text-navyText text-lg">Infant Care</div>
                     </td>
-                    <td className="px-8 py-6 text-navyText/80">6 months – 2 years</td>
+                    <td className="px-8 py-6 text-navyText/80">8 months – 2 years</td>
                     <td className="px-8 py-6 text-navyText/80">8:30 AM – 5:30 PM</td>
                   </tr>
                   <tr className="border-b border-gray-200 hover:bg-softTeal/20 transition">
