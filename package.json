@@ -17,6 +17,7 @@
     "@types/node": "^24.7.0",
     "@types/react": "^18.3.25",
     "@types/react-dom": "^18.3.7",
+    "@vercel/analytics": "^1.5.0",
     "autoprefixer": "^10.4.21",
     "libphonenumber-js": "^1.12.23",
     "next": "^15.5.4",
