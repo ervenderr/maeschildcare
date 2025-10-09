@@ -2,6 +2,10 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import PhoneInput from 'react-phone-number-input'
+import { isValidPhoneNumber } from 'libphonenumber-js'
+import 'react-phone-number-input/style.css'
+import './styles.css'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,20 +16,175 @@ export default function Contact() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [validationErrors, setValidationErrors] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+  const [honeypot, setHoneypot] = useState('') // Bot detection
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Validation functions
+  const validateName = (name: string): string => {
+    if (!name.trim()) return 'Name is required'
+    if (name.trim().length < 2) return 'Name must be at least 2 characters'
+    if (name.trim().length > 100) return 'Name must be less than 100 characters'
+    if (!/^[a-zA-Z\s'-]+$/.test(name)) return 'Name can only contain letters, spaces, hyphens, and apostrophes'
+    return ''
+  }
+
+  const validateEmail = (email: string): string => {
+    if (!email.trim()) return 'Email is required'
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) return 'Please enter a valid email address'
+    if (email.length > 254) return 'Email is too long'
+    return ''
+  }
+
+  const validatePhone = (phone: string): string => {
+    if (!phone.trim()) return 'Phone number is required'
+    try {
+      if (!isValidPhoneNumber(phone)) {
+        return 'Please enter a valid phone number'
+      }
+    } catch {
+      return 'Please enter a valid phone number'
+    }
+    return ''
+  }
+
+  const validateMessage = (message: string): string => {
+    if (!message.trim()) return 'Message is required'
+    if (message.trim().length < 10) return 'Message must be at least 10 characters'
+    if (message.trim().length > 5000) return 'Message must be less than 5000 characters'
+    return ''
+  }
+
+  const validateForm = (): boolean => {
+    const errors = {
+      name: validateName(formData.name),
+      email: validateEmail(formData.email),
+      phone: validatePhone(formData.phone),
+      message: validateMessage(formData.message)
+    }
+
+    setValidationErrors(errors)
+
+    return !Object.values(errors).some(error => error !== '')
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real application, you would send this data to a server
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    
+    // Honeypot check - if filled, it's likely a bot
+    if (honeypot) {
+      console.log('Bot detected')
+      return
+    }
+
+    // Validate form
+    if (!validateForm()) {
+      setError('Please fix the errors above')
+      return
+    }
+
+    setLoading(true)
+    setError('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+
+      // Success
+      setSubmitted(true)
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      })
+      setValidationErrors({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      })
+      setTimeout(() => setSubmitted(false), 5000)
+
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     })
+    
+    // Clear validation error when user starts typing
+    if (validationErrors[name as keyof typeof validationErrors]) {
+      setValidationErrors({
+        ...validationErrors,
+        [name]: ''
+      })
+    }
+  }
+
+  const handlePhoneChange = (value: string | undefined) => {
+    setFormData({
+      ...formData,
+      phone: value || ''
+    })
+    
+    // Clear validation error when user starts typing
+    if (validationErrors.phone) {
+      setValidationErrors({
+        ...validationErrors,
+        phone: ''
+      })
+    }
+  }
+
+  const handleBlur = (field: keyof typeof formData) => {
+    let error = ''
+    switch (field) {
+      case 'name':
+        error = validateName(formData.name)
+        break
+      case 'email':
+        error = validateEmail(formData.email)
+        break
+      case 'phone':
+        error = validatePhone(formData.phone)
+        break
+      case 'message':
+        error = validateMessage(formData.message)
+        break
+    }
+    
+    if (error) {
+      setValidationErrors({
+        ...validationErrors,
+        [field]: error
+      })
+    }
   }
 
   return (
@@ -64,12 +223,30 @@ export default function Contact() {
               </h2>
 
               {submitted && (
-                <div className="bg-softTeal/20 border-2 border-softTeal text-navyText p-4 rounded-2xl mb-6">
-                  <p className="font-semibold">✓ Thank you! Your message has been sent successfully.</p>
+                <div className="bg-softTeal/20 border-2 border-softTeal text-navyText p-4 rounded-2xl mb-6 animate-scaleIn">
+                  <p className="font-semibold">✓ Thank you! Your message has been sent successfully. We'll get back to you soon!</p>
+                </div>
+              )}
+
+              {error && (
+                <div className="bg-red-50 border-2 border-red-400 text-red-700 p-4 rounded-2xl mb-6 animate-scaleIn">
+                  <p className="font-semibold">✗ {error}</p>
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot field - hidden from users, only bots will fill it */}
+                <input
+                  type="text"
+                  name="website"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  style={{ position: 'absolute', left: '-9999px' }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+
                 <div>
                   <label htmlFor="name" className="block text-navyText font-semibold mb-2">
                     Full Name *
@@ -80,10 +257,22 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    onBlur={() => handleBlur('name')}
                     required
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-softTeal focus:outline-none transition"
+                    maxLength={100}
+                    className={`w-full px-4 py-3 rounded-xl border-2 ${
+                      validationErrors.name 
+                        ? 'border-red-400 focus:border-red-500' 
+                        : 'border-gray-200 focus:border-softTeal'
+                    } focus:outline-none transition`}
                     placeholder="Enter your full name"
+                    autoComplete="name"
                   />
+                  {validationErrors.name && (
+                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                      <span>⚠️</span> {validationErrors.name}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -96,26 +285,48 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    onBlur={() => handleBlur('email')}
                     required
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-softTeal focus:outline-none transition"
+                    maxLength={254}
+                    className={`w-full px-4 py-3 rounded-xl border-2 ${
+                      validationErrors.email 
+                        ? 'border-red-400 focus:border-red-500' 
+                        : 'border-gray-200 focus:border-softTeal'
+                    } focus:outline-none transition`}
                     placeholder="your.email@example.com"
+                    autoComplete="email"
                   />
+                  {validationErrors.email && (
+                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                      <span>⚠️</span> {validationErrors.email}
+                    </p>
+                  )}
                 </div>
 
                 <div>
                   <label htmlFor="phone" className="block text-navyText font-semibold mb-2">
                     Phone Number *
                   </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
+                  <PhoneInput
+                    international
+                    defaultCountry="US"
                     value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-softTeal focus:outline-none transition"
+                    onChange={handlePhoneChange}
+                    onBlur={() => handleBlur('phone')}
+                    className={`phone-input ${
+                      validationErrors.phone ? 'phone-input-error' : ''
+                    }`}
                     placeholder="(123) 456-7890"
+                    autoComplete="tel"
                   />
+                  {validationErrors.phone && (
+                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                      <span>⚠️</span> {validationErrors.phone}
+                    </p>
+                  )}
+                  <p className="mt-1 text-xs text-gray-500">
+                    Select your country code from the dropdown
+                  </p>
                 </div>
 
                 <div>
@@ -127,19 +338,48 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
+                    onBlur={() => handleBlur('message')}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-softTeal focus:outline-none transition resize-none"
+                    maxLength={5000}
+                    className={`w-full px-4 py-3 rounded-xl border-2 ${
+                      validationErrors.message 
+                        ? 'border-red-400 focus:border-red-500' 
+                        : 'border-gray-200 focus:border-softTeal'
+                    } focus:outline-none transition resize-none`}
                     placeholder="Tell us about your needs or ask any questions..."
                   />
+                  {validationErrors.message && (
+                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                      <span>⚠️</span> {validationErrors.message}
+                    </p>
+                  )}
+                  <p className="mt-1 text-xs text-gray-500 text-right">
+                    {formData.message.length} / 5000 characters
+                  </p>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-lightCoral text-white px-8 py-4 rounded-full font-heading font-semibold text-lg hover:bg-opacity-90 transition shadow-lg"
+                  disabled={loading}
+                  className="w-full bg-lightCoral text-white px-8 py-4 rounded-full font-heading font-semibold text-lg hover:bg-opacity-90 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {loading ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : (
+                    'Send Message'
+                  )}
                 </button>
+
+                <p className="text-xs text-gray-500 text-center mt-4">
+                  🔒 Your information is secure and will never be shared with third parties.
+                </p>
               </form>
             </div>
 
@@ -161,7 +401,6 @@ export default function Contact() {
                     <div>
                       <h3 className="font-heading font-bold text-navyText text-xl mb-2">Phone</h3>
                       <p className="text-navyText/80">415-875-9847</p>
-                      <p className="text-navyText/80">415-652-1748</p>
                     </div>
                   </div>
                 </div>
@@ -171,7 +410,7 @@ export default function Contact() {
                     <div className="text-4xl">✉️</div>
                     <div>
                       <h3 className="font-heading font-bold text-navyText text-xl mb-2">Email</h3>
-                      <p className="text-navyText/80">maeschildcare@email.com</p>
+                      <p className="text-navyText/80">mildredknox949@gmail.com</p>
                     </div>
                   </div>
                 </div>

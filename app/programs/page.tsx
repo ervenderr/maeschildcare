@@ -47,8 +47,8 @@ export default function Programs() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl animate-slideInLeft hover-lift">
               <Image
-                src="/images/Baby-Child-Care-1-1.jpg"
-                alt="Infant care"
+                src="/images/IMG_0927.jpeg"
+                alt="Children in playroom learning environment"
                 fill
                 className="object-cover"
               />
@@ -131,8 +131,8 @@ export default function Programs() {
 
             <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl order-1 md:order-2 animate-slideInRight hover-lift">
               <Image
-                src="/images/the-importance-of-play-in-child-development.jpg"
-                alt="Toddler program"
+                src="/images/IMG_0921.jpeg"
+                alt="Toddlers playing with colorful foam blocks"
                 fill
                 className="object-cover"
               />
@@ -147,8 +147,8 @@ export default function Programs() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl animate-slideInLeft hover-lift">
               <Image
-                src="/images/Childcare-vs-Kindergarten-Making-the-Right-Choice-for-your-Kids-1.jpg"
-                alt="Preschool program"
+                src="/images/IMG_0894.jpeg"
+                alt="Preschooler drawing and creating art"
                 fill
                 className="object-cover"
               />

@@ -41,11 +41,11 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-start">
                 <span className="mr-2">📞</span>
-                <span>415-875-9847 / 415-652-1748</span>
+                <span>415-875-9847</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">✉️</span>
-                <span>maeschildcare@email.com</span>
+                <span>mildredknox949@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">📍</span>

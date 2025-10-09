@@ -49,8 +49,8 @@ export default function Home() {
             <div className="relative animate-fadeIn animation-delay-300">
               <div className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl hover-lift">
                 <Image
-                  src="/images/iStock-1069933778.jpg"
-                  alt="Happy children playing at Mae's Childcare"
+                  src="/images/IMG_0894.jpeg"
+                  alt="Children playing in colorful indoor playroom at Mae's Childcare"
                   fill
                   className="object-cover"
                   priority
@@ -69,10 +69,10 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-80 rounded-3xl overflow-hidden shadow-xl">
+            <div className="relative h-full rounded-3xl overflow-hidden shadow-xl">
               <Image
-                src="/images/DSC2967-scaled.jpg"
-                alt="Teacher Mae with children"
+                src="/images/IMG_0927.jpeg"
+                alt="Teacher with children in playroom"
                 fill
                 className="object-cover"
               />
@@ -234,48 +234,48 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
               <Image
-                src="/images/the-importance-of-play-in-child-development.jpg"
-                alt="Children playing"
+                src="/images/IMG_0853.jpeg"
+                alt="Child on outdoor playground slide"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
               <Image
-                src="/images/AdobeStock_229647792_Resized-1024x752.jpeg"
-                alt="Learning activities"
+                src="/images/IMG_0927.jpeg"
+                alt="Teacher supervising children's activities"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
               <Image
-                src="/images/Baby-Child-Care-1-1.jpg"
-                alt="Baby care"
+                src="/images/IMG_0909.jpeg"
+                alt="Children playing in indoor playroom"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
               <Image
-                src="/images/50b2a597-79f8-4206-907c-0d895c51c242.jpg"
-                alt="Children activities"
+                src="/images/IMG_0894.jpeg"
+                alt="Child drawing on art easel"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
               <Image
-                src="/images/Childcare-vs-Kindergarten-Making-the-Right-Choice-for-your-Kids-1.jpg"
-                alt="Kindergarten activities"
+                src="/images/IMG_0878.jpeg"
+                alt="Children using art easels"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
               <Image
-                src="/images/wmremove-transformed.jpeg"
-                alt="Fun time"
+                src="/images/IMG_0919.jpeg"
+                alt="Indoor playroom with colorful mats"
                 fill
                 className="object-cover"
               />
@@ -307,11 +307,10 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
               <div className="text-4xl mb-3">📞</div>
               <p className="text-lg">415-875-9847</p>
-              <p className="text-lg">415-652-1748</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
               <div className="text-4xl mb-3">✉️</div>
-              <p className="text-lg">maeschildcare@email.com</p>
+              <p className="text-lg">mildredknox949@gmail.com</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
               <div className="text-4xl mb-3">📍</div>

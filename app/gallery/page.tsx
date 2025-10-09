@@ -5,49 +5,49 @@ import Image from 'next/image'
 
 const galleryImages = [
   {
-    src: '/images/the-importance-of-play-in-child-development.jpg',
-    alt: 'Children playing together',
+    src: '/images/IMG_0919.jpeg',
+    alt: 'IChildren drawing on art easels',
     category: 'playtime'
   },
   {
-    src: '/images/AdobeStock_229647792_Resized-1024x752.jpeg',
-    alt: 'Learning activities',
-    category: 'learning'
-  },
-  {
-    src: '/images/Baby-Child-Care-1-1.jpg',
-    alt: 'Infant care',
-    category: 'learning'
-  },
-  {
-    src: '/images/50b2a597-79f8-4206-907c-0d895c51c242.jpg',
-    alt: 'Children activities',
+    src: '/images/IMG_0921.jpeg',
+    alt: 'Child enjoying outdoor playground slide',
     category: 'playtime'
   },
   {
-    src: '/images/Childcare-vs-Kindergarten-Making-the-Right-Choice-for-your-Kids-1.jpg',
-    alt: 'Kindergarten activities',
+    src: '/images/IMG_0927.jpeg',
+    alt: 'Children on outdoor playground climbing equipment',
     category: 'learning'
   },
   {
-    src: '/images/wmremove-transformed.jpeg',
-    alt: 'Fun time with friends',
-    category: 'events'
-  },
-  {
-    src: '/images/DSC2967-scaled.jpg',
-    alt: 'Teacher with children',
-    category: 'learning'
-  },
-  {
-    src: '/images/iStock-1069933778.jpg',
-    alt: 'Happy children playing',
-    category: 'playtime'
-  },
-  {
-    src: '/images/Child-care-checklist-narrow.jpg',
-    alt: 'Arts and crafts',
+    src: '/images/IMG_0894.jpeg',
+    alt: 'Child creating artwork on easel',
     category: 'arts'
+  },
+  {
+    src: '/images/IMG_0878.jpeg',
+    alt: 'Indoor playroom with colorful foam mats and toys',
+    category: 'arts'
+  },
+  {
+    src: '/images/IMG_0912.jpeg',
+    alt: 'Art activity time with easels and drawing',
+    category: 'arts'
+  },
+  {
+    src: '/images/IMG_0853.jpeg',
+    alt: 'Indoor playroom with colorful foam mats and toys',
+    category: 'playtime'
+  },
+  {
+    src: '/images/IMG_0856.jpeg',
+    alt: 'Indoor playroom with colorful foam mats and toys',
+    category: 'playtime'
+  },
+  {
+    src: '/images/IMG_0909.jpeg',
+    alt: 'Art activity time with easels and drawing',
+    category: 'events'
   },
 ]
 

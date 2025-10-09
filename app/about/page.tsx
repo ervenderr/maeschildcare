@@ -92,10 +92,10 @@ export default function About() {
       <section className="py-16 bg-gradient-to-br from-creamWhite to-pastelYellow/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/DSC2967-scaled.jpg"
-                alt="Teacher Mae - Founder"
+                src="/images/IMG_0878.jpeg"
+                alt="Mae's Childcare indoor playroom facility"
                 fill
                 className="object-cover"
               />
