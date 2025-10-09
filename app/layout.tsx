@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Mae's Childcare - Licensed Bilingual Childcare in San Francisco",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main>{children}</main>
+        <Analytics />
         <Footer />
       </body>
     </html>
