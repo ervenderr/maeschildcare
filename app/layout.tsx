@@ -68,7 +68,7 @@ export default function RootLayout({
                 latitude: 37.7769,
                 longitude: -122.4363,
               },
-              openingHours: "Mo-Fr 08:00-18:00",
+              openingHours: "Mo-Fr 08:30-18:30",
               priceRange: "$$",
               sameAs: [
                 "https://www.facebook.com/maeschildcare",
