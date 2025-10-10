@@ -119,8 +119,8 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const data = await resend.emails.send({
-      from: 'Mae\'s Childcare <onboarding@resend.dev>', // Change to contact@maeschildcare.com after DNS verification
-      to: 'mildredknox949@gmail.com',
+      from: 'Mae\'s Childcare <contact@maeschildcare.com>', // Change to contact@maeschildcare.com after DNS verification
+      to: 'maeknox949@gmail.com',
       replyTo: email,
       subject: `New Contact Form Message from ${name}`,
       html: `
@@ -139,11 +139,6 @@ export async function POST(request: NextRequest) {
                   <!-- Header with Logo/Brand -->
                   <tr>
                     <td style="background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%); padding: 30px 20px; text-align: center;">
-                      <div style="width: 120px; height: 120px; margin: 0 auto 15px; background-color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 15px;">
-                        <img src="https://maeschildcare.com/images/name.png" 
-                             alt="Mae's Childcare Logo" 
-                             style="width: 100%; height: auto; display: block;">
-                      </div>
                       <h1 style="margin: 0; color: white; font-size: 28px; font-weight: bold; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         Mae's Childcare
                       </h1>
@@ -157,22 +152,22 @@ export async function POST(request: NextRequest) {
                   <tr>
                     <td style="padding: 40px 30px;">
                       <h2 style="color: #2D3748; margin: 0 0 20px 0; font-size: 22px; border-bottom: 3px solid #FF6B6B; padding-bottom: 10px;">
-                        📬 New Contact Form Submission
+                        New Contact Form Submission
                       </h2>
                       
                       <!-- Contact Info Card -->
                       <div style="background: #F7FAFC; padding: 25px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #4FD1C5;">
                         <table width="100%" cellpadding="5" cellspacing="0">
                           <tr>
-                            <td style="color: #2D3748; font-weight: bold; width: 80px;">👤 Name:</td>
+                            <td style="color: #2D3748; font-weight: bold; width: 80px;">Name:</td>
                             <td style="color: #4A5568;">${name}</td>
                           </tr>
                           <tr>
-                            <td style="color: #2D3748; font-weight: bold;">📧 Email:</td>
+                            <td style="color: #2D3748; font-weight: bold;">Email:</td>
                             <td style="color: #4A5568;"><a href="mailto:${email}" style="color: #3182CE; text-decoration: none;">${email}</a></td>
                           </tr>
                           <tr>
-                            <td style="color: #2D3748; font-weight: bold;">📱 Phone:</td>
+                            <td style="color: #2D3748; font-weight: bold;">Phone:</td>
                             <td style="color: #4A5568;"><a href="tel:${phone}" style="color: #3182CE; text-decoration: none;">${phone}</a></td>
                           </tr>
                         </table>
@@ -180,7 +175,7 @@ export async function POST(request: NextRequest) {
 
                       <!-- Message -->
                       <div style="margin: 25px 0;">
-                        <p style="margin: 0 0 10px 0; color: #2D3748; font-weight: bold; font-size: 16px;">💬 Message:</p>
+                        <p style="margin: 0 0 10px 0; color: #2D3748; font-weight: bold; font-size: 16px;">Message:</p>
                         <div style="background: white; padding: 20px; border-left: 4px solid #4FD1C5; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                           <p style="color: #4A5568; line-height: 1.6; margin: 0; white-space: pre-wrap;">${message}</p>
                         </div>
@@ -206,13 +201,13 @@ export async function POST(request: NextRequest) {
                               <strong>Mae's Childcare</strong>
                             </p>
                             <p style="margin: 0 0 5px 0; color: #718096; font-size: 12px;">
-                              📍 949 Grove Street, San Francisco, CA 94117
+                              Address: 949 Grove Street, San Francisco, CA 94117
                             </p>
                             <p style="margin: 0 0 5px 0; color: #718096; font-size: 12px;">
-                              📞 (123) 456-7890
+                              Phone: 415-875-9847
                             </p>
                             <p style="margin: 0 0 15px 0; color: #718096; font-size: 12px;">
-                              🌐 <a href="https://maeschildcare.com" style="color: #3182CE; text-decoration: none;">maeschildcare.com</a>
+                              Website: <a href="https://maeschildcare.com" style="color: #3182CE; text-decoration: none;">maeschildcare.com</a>
                             </p>
                             <p style="margin: 15px 0 0 0; padding-top: 15px; border-top: 1px solid #E2E8F0; color: #A0AEC0; font-size: 11px;">
                               This message was sent from your website's contact form.<br>

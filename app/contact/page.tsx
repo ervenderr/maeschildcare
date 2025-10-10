@@ -396,30 +396,30 @@ export default function Contact() {
 
               <div className="space-y-6">
                 <div className="bg-gradient-to-br from-pastelYellow to-yellow-100 p-6 rounded-2xl shadow-lg">
-                  <div className="flex items-start gap-4">
-                    <div className="text-4xl">📞</div>
-                    <div>
-                      <h3 className="font-heading font-bold text-navyText text-xl mb-2">Phone</h3>
-                      <p className="text-navyText/80">415-875-9847</p>
+                  <div className="flex items-center gap-4">
+                    <div className="text-3xl sm:text-4xl flex-shrink-0">📞</div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-heading font-bold text-navyText text-lg sm:text-xl mb-2">Phone</h3>
+                      <p className="text-navyText/80 break-all">415-875-9847</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-softTeal to-green-100 p-6 rounded-2xl shadow-lg">
-                  <div className="flex items-start gap-4">
-                    <div className="text-4xl">✉️</div>
-                    <div>
-                      <h3 className="font-heading font-bold text-navyText text-xl mb-2">Email</h3>
-                      <p className="text-navyText/80">mildredknox949@gmail.com</p>
+                  <div className="flex items-center gap-4">
+                    <div className="text-3xl sm:text-4xl flex-shrink-0">✉️</div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-heading font-bold text-navyText text-lg sm:text-xl mb-2">Email</h3>
+                      <p className="text-navyText/80 break-all">maeknox949@gmail.com</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-skyBlue to-blue-100 p-6 rounded-2xl shadow-lg">
                   <div className="flex items-start gap-4">
-                    <div className="text-4xl">📍</div>
-                    <div>
-                      <h3 className="font-heading font-bold text-navyText text-xl mb-2">Address</h3>
+                    <div className="text-3xl sm:text-4xl flex-shrink-0">📍</div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-heading font-bold text-navyText text-lg sm:text-xl mb-2">Address</h3>
                       <p className="text-navyText/80">949 Grove Street</p>
                       <p className="text-navyText/80">San Francisco, CA 94117</p>
                     </div>
@@ -428,9 +428,9 @@ export default function Contact() {
 
                 <div className="bg-gradient-to-br from-lightCoral to-red-100 p-6 rounded-2xl shadow-lg">
                   <div className="flex items-start gap-4">
-                    <div className="text-4xl">🕒</div>
-                    <div>
-                      <h3 className="font-heading font-bold text-navyText text-xl mb-2">Operating Hours</h3>
+                    <div className="text-3xl sm:text-4xl flex-shrink-0">🕒</div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-heading font-bold text-navyText text-lg sm:text-xl mb-2">Operating Hours</h3>
                       <p className="text-navyText/80">Monday – Friday</p>
                       <p className="text-navyText/80">8:30 AM – 5:30 PM</p>
                       <p className="text-sm text-navyText/60 mt-2">Full Calendar Year</p>

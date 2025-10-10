@@ -310,7 +310,7 @@ export default function Home() {
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
               <div className="text-4xl mb-3">✉️</div>
-              <p className="text-lg">mildredknox949@gmail.com</p>
+              <p className="text-lg">maeknox949@gmail.com</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
               <div className="text-4xl mb-3">📍</div>
