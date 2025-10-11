@@ -120,7 +120,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const data = await resend.emails.send({
       from: 'Mae\'s Childcare <contact@maeschildcare.com>', // Change to contact@maeschildcare.com after DNS verification
-     to: ['maeknox949@gmail.com', 'ervenidjad12@gmail.com']
+     to: ['maeknox949@gmail.com', 'ervenidjad12@gmail.com'],
       replyTo: email,
       subject: `New Contact Form Message from ${name}`,
       html: `
