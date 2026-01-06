@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
   title: "Mae's Childcare | Trusted Bilingual Childcare in San Francisco, CA",
   description:
-    "Mae's Childcare is a licensed bilingual childcare home in San Francisco offering art-based learning, nurturing care, and early education for ages 8 months to 5 years. Licensed #384005044.",
+    "Mae's Childcare is a licensed bilingual childcare home in San Francisco offering art-based learning, nurturing care, and early education for ages 4 months to 5 years. Licensed #384005044.",
   keywords:
     "childcare San Francisco, daycare San Francisco, bilingual childcare, licensed daycare, infant care, toddler program, preschool, Hayes Valley childcare, Filipino childcare",
   metadataBase: new URL("https://www.maeschildcare.com"),
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mae's Childcare | Licensed Childcare in San Francisco",
     description:
-      "Trusted bilingual childcare in San Francisco, CA — nurturing art-based learning and early education for children 8 months to 5 years.",
+      "Trusted bilingual childcare in San Francisco, CA — nurturing art-based learning and early education for children 4 months to 5 years.",
     url: "https://www.maeschildcare.com",
     siteName: "Mae's Childcare",
     images: [
