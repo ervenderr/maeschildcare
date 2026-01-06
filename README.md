@@ -19,7 +19,7 @@ A modern, child-friendly childcare website built with Next.js 15, TypeScript, an
 - **About** - Mission statement, philosophy, our story, core values
 - **Programs** - Infant care, toddler program, preschool, after school care
 - **Enrollment** - Enrollment process, downloadable forms, tuition & schedule
-- **Staff** - Teacher profiles and specialties
+- **Staff** - Profiles and specialties
 - **Gallery** - Photo gallery with category filters and lightbox view
 - **Contact** - Contact form, information, map, and FAQ
 

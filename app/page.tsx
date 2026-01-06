@@ -72,7 +72,7 @@ export default function Home() {
             <div className="relative h-full rounded-3xl overflow-hidden shadow-xl">
               <Image
                 src="/images/IMG_0927.jpeg"
-                alt="Teacher with children in playroom"
+                alt="Caregiver with children in playroom"
                 fill
                 className="object-cover"
               />
@@ -243,7 +243,7 @@ export default function Home() {
             <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
               <Image
                 src="/images/IMG_0927.jpeg"
-                alt="Teacher supervising children's activities"
+                alt="Caregiver supervising children's activities"
                 fill
                 className="object-cover"
               />
