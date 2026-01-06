@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "Enrollment - Mae's Childcare",
-  description: 'Enroll your child at Mae\'s Childcare. View our enrollment process, tuition rates, and download required forms.',
+  description: 'Enroll your child at Mae\'s Childcare. View our enrollment process now!',
 }
 
 export default function Enrollment() {
@@ -50,9 +50,9 @@ export default function Enrollment() {
                 1
               </div>
               <div>
-                <h3 className="text-2xl font-heading font-bold text-navyText mb-3">Fill Out Application Form</h3>
+                <h3 className="text-2xl font-heading font-bold text-navyText mb-3">Contact Us First</h3>
                 <p className="text-navyText/80 text-lg">
-                  Complete our online application form or download and submit the PDF version. Provide basic information about your child and your family's needs.
+                  Reach out to us by phone or email to express your interest in enrollment. We'll provide you with all the necessary information and next steps for your child's enrollment.
                 </p>
               </div>
             </div>
@@ -96,46 +96,8 @@ export default function Enrollment() {
         </div>
       </section>
 
-      {/* Downloadable Forms */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-12 animate-fadeInUp">
-            Downloadable <span className="text-lightCoral">Forms</span>
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-pastelYellow to-yellow-100 p-8 rounded-3xl shadow-lg text-center hover-lift transition animate-scaleIn">
-              <div className="text-6xl mb-4">📝</div>
-              <h3 className="text-xl font-heading font-bold text-navyText mb-4">Enrollment Form</h3>
-              <p className="text-navyText/70 mb-6">Complete this form to begin the enrollment process</p>
-              <button className="bg-navyText text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition">
-                Download PDF
-              </button>
-            </div>
-
-            <div className="bg-gradient-to-br from-softTeal to-green-100 p-8 rounded-3xl shadow-lg text-center">
-              <div className="text-6xl mb-4">📚</div>
-              <h3 className="text-xl font-heading font-bold text-navyText mb-4">Parent Handbook</h3>
-              <p className="text-navyText/70 mb-6">Learn about our policies, procedures, and expectations</p>
-              <button className="bg-navyText text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition">
-                Download PDF
-              </button>
-            </div>
-
-            <div className="bg-gradient-to-br from-skyBlue to-blue-100 p-8 rounded-3xl shadow-lg text-center">
-              <div className="text-6xl mb-4">⚕️</div>
-              <h3 className="text-xl font-heading font-bold text-navyText mb-4">Medical Info Sheet</h3>
-              <p className="text-navyText/70 mb-6">Provide essential health and emergency information</p>
-              <button className="bg-navyText text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition">
-                Download PDF
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Schedule Information */}
-      <section className="py-16 bg-gradient-to-br from-creamWhite to-skyBlue/20">
+      <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-4">
             Our <span className="text-softTeal">Schedule</span>

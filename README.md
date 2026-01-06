@@ -73,6 +73,6 @@ License Number: 384005044
 ## Contact
 
 - **Phone:** 415-875-9847
-- **Email:** mildredknox949@gmail.com
+- **Email:** maeknox949@gmail.com
 - **Address:** 123 Sunshine Street, Zamboanga City, Philippines
 - **Hours:** Monday–Friday, 8:00 AM–6:00 PM
