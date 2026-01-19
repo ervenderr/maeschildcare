@@ -2,6 +2,8 @@
 
 A modern, child-friendly childcare website built with Next.js 15, TypeScript, and TailwindCSS.
 
+<img width="1424" height="764" alt="image" src="https://github.com/user-attachments/assets/ae8cc7ad-5b23-4224-8d02-e99b13eff9f7" />
+
 ## Features
 
 - 🎨 Beautiful, child-friendly design with pastel colors
