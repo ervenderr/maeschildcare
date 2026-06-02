@@ -42,9 +42,11 @@ export default function Staff() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative h-96 min-h-full rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/teacher1.png"
+                  src="/images/IMG_0878.jpeg"
                   alt="Ms. Mae - Owner and Head Caregiver"
                   fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -143,9 +145,10 @@ export default function Staff() {
 
               <div className="relative h-96 min-h-full rounded-3xl overflow-hidden shadow-2xl order-1 md:order-2">
                 <Image
-                  src="/images/teacher2.png"
+                  src="/images/IMG_0927.jpeg"
                   alt="Miss Sandara - Preschool Caregiver"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
