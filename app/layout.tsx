@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     siteName: "Mae's Childcare",
     images: [
       {
-        url: "/public/name.png",
-        width: 1200,
-        height: 630,
+        url: "/images/logo.jpg",
+        width: 2047,
+        height: 1263,
         alt: "Mae's Childcare - San Francisco",
       },
     ],
@@ -32,8 +32,19 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      {
+        url: "/favicon.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
+    ],
+    shortcut: "/favicon.png",
+    apple: {
+      url: "/favicon.png",
+      type: "image/png",
+      sizes: "512x512",
+    },
   },
 };
 
@@ -56,9 +67,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ChildCare",
               name: "Mae’s Childcare",
-              image: "https://www.maeschildcare.com/logo.png",
+              image: "https://www.maeschildcare.com/images/logo.jpg",
               url: "https://www.maeschildcare.com",
-              telephone: "+1-415-555-1234",
+              telephone: "+1-415-875-9847",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "949 Grove St",
@@ -72,7 +83,7 @@ export default function RootLayout({
                 latitude: 37.7769,
                 longitude: -122.4363,
               },
-              openingHours: "Mo-Fr 08:30-18:30",
+              openingHours: "Mo-Fr 08:30-17:30",
               priceRange: "$$",
               sameAs: [
                 "https://www.facebook.com/maeschildcare",
