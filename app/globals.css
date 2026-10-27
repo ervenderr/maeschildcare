@@ -1,8 +1,7 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
 
 @theme {
-  /* Updated colors to match name.svg logo */
+  /* Brand palette (pinned) */
   --color-brightOrange: #FF6B35;
   --color-brightTeal: #2AB7CA;
   --color-goldenYellow: #FED766;
@@ -10,170 +9,208 @@
   --color-creamWhite: #FFF9F0;
   --color-skyBlue: #AEDFF7;
 
-  /* Legacy color names for compatibility */
+  /* Ink: navy tinted dark enough to pass contrast on every brand colour */
+  --color-ink: #0A2540;
+
+  /* Legacy names still used by inner pages */
   --color-lightCoral: #FF6B35;
   --color-softTeal: #2AB7CA;
   --color-pastelYellow: #FED766;
-  --color-navyText: #004E89;
+  --color-navyText: #0A2540;
 
-  --font-family-heading: 'Fredoka', 'Quicksand', sans-serif;
-  --font-family-body: 'Nunito', 'Open Sans', sans-serif;
+  --font-heading: var(--font-display), 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-sans: var(--font-body), 'Figtree', system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+:root {
+  --rule: rgb(10 37 64 / 0.16);
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: #0A2540 #FFF9F0;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
-  color: #004E89;
+  background: #FFF9F0;
+  color: #0A2540;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Fredoka', sans-serif;
+  font-family: var(--font-display), system-ui, sans-serif;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
-h1 {
-  font-weight: 700;
+p, li { text-wrap: pretty; }
+
+::selection { background: #FED766; color: #0A2540; }
+
+:focus-visible {
+  outline: 3px solid #004E89;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-.logo-text {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
+@layer components {
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3.25rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.875rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.0625rem;
   letter-spacing: -0.01em;
+  transition: transform 180ms var(--ease-out-quart), background-color 180ms ease, box-shadow 180ms var(--ease-out-quart);
+}
+.btn:active { transform: scale(0.97); }
+
+.btn-orange {
+  background: #FF6B35;
+  color: #0A2540;
+  box-shadow: 0 1px 0 rgb(10 37 64 / 0.2), 0 8px 20px -8px rgb(255 107 53 / 0.6);
+}
+.btn-ink {
+  background: #0A2540;
+  color: #FFF9F0;
+}
+.btn-ghost {
+  background: transparent;
+  color: #0A2540;
+  box-shadow: inset 0 0 0 1.5px #0A2540;
+}
+.btn-yellow {
+  background: #FED766;
+  color: #0A2540;
+}
+@media (hover: hover) {
+  .btn-orange:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgb(10 37 64 / 0.2), 0 14px 26px -10px rgb(255 107 53 / 0.75); }
+  .btn-orange:active { transform: scale(0.97); }
+  .btn-ink:hover { background: #004E89; }
+  .btn-ghost:hover { background: #0A2540; color: #FFF9F0; }
+  .btn-yellow:hover { background: #fff; }
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+.rule-top { border-top: 1px solid var(--rule); }
+.rule-bottom { border-bottom: 1px solid var(--rule); }
+
+/* Arched photo window: a half-circle top, soft square base */
+.arch {
+  border-radius: 999px 999px 1.5rem 1.5rem;
+  overflow: hidden;
+}
+
+/* Colour card: matte chip with a catalogue code strip */
+.chip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 20rem;
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  color: #0A2540;
+  transition: transform 300ms var(--ease-out-expo), box-shadow 300ms var(--ease-out-expo);
+}
+@media (hover: hover) {
+  .chip:hover { transform: translateY(-6px); box-shadow: 0 24px 40px -24px rgb(10 37 64 / 0.45); }
+}
+
+/* Nav link underline that draws in from the left */
+.link-draw {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+.link-draw::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: calc(50% - 1.05em);
+  height: 2px;
+  background: #FF6B35;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 260ms var(--ease-out-expo);
+}
+.link-draw:hover::after,
+.link-draw[aria-current="page"]::after { transform: scaleX(1); }
+
+/* Photo tile: zoom inside the frame, never the frame itself */
+.photo { overflow: hidden; }
+.photo img { transition: transform 700ms var(--ease-out-expo); }
+@media (hover: hover) {
+  .photo:hover img { transform: scale(1.04); }
+}
+
+}
+
+/* ---------- Motion ---------- */
+
+/* The one authored moment: hero load. Content is visible by default
+   (animation only runs when motion is allowed). */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes arch-open {
+  from { clip-path: inset(100% 0 0 0 round 999px 999px 24px 24px); }
+  to { clip-path: inset(0 0 0 0 round 999px 999px 24px 24px); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 800ms var(--ease-out-expo) backwards;
+    animation-delay: calc(var(--i, 0) * 90ms);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .arch-open { animation: arch-open 1100ms var(--ease-out-expo) 120ms backwards; }
+
+  /* Scroll reveals via view timeline where supported; elsewhere content simply shows. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear backwards;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Animation utility classes */
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-.animate-slideInLeft {
-  animation: slideInLeft 0.6s ease-out forwards;
-}
-
-.animate-slideInRight {
-  animation: slideInRight 0.6s ease-out forwards;
-}
-
-.animate-bounce {
-  animation: bounce 2s ease-in-out infinite;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-scaleIn {
-  animation: scaleIn 0.5s ease-out forwards;
-}
-
-/* Delay utilities */
-.animation-delay-100 {
-  animation-delay: 100ms;
-}
-
-.animation-delay-200 {
-  animation-delay: 200ms;
-}
-
-.animation-delay-300 {
-  animation-delay: 300ms;
-}
-
-.animation-delay-400 {
-  animation-delay: 400ms;
-}
-
-.animation-delay-500 {
-  animation-delay: 500ms;
-}
-
-/* Smooth transitions for interactive elements */
-button, a, .card {
-  transition: all 0.3s ease;
-}
-
-/* Hover effects */
-.hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.hover-grow:hover {
-  transform: scale(1.05);
-}
+/* ---------- Legacy helpers used by inner pages (removed as pages migrate) ---------- */
+.animate-fadeInUp { animation: rise 700ms var(--ease-out-expo) both; }
+.animate-fadeIn { animation: fade-in 700ms ease both; }
+.animate-scaleIn { animation: rise 700ms var(--ease-out-expo) both; }
+.animate-slideInLeft, .animate-slideInRight { animation: rise 700ms var(--ease-out-expo) both; }
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+.hover-lift { transition: transform 300ms var(--ease-out-expo), box-shadow 300ms var(--ease-out-expo); }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -18px rgb(10 37 64 / 0.4); }

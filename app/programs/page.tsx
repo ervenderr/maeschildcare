@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Programs - Mae's Childcare",
@@ -7,276 +8,147 @@ export const metadata: Metadata = {
     "Explore our age-appropriate childcare programs including infant care, toddler program, preschool, and after school care.",
 };
 
+const PROGRAMS = [
+  {
+    name: "Infant Care",
+    age: "4 months – 2 years",
+    body: "Our infant care program provides gentle, attentive care for your precious little ones. We focus on creating a warm, secure environment where babies can explore and develop at their own pace.",
+    offers: [
+      "Sensory play activities to stimulate development",
+      "Individualized feeding and napping schedules",
+      "Focus on emotional bonding and comfort",
+      "Daily reports on feeding, diapering, and activities",
+    ],
+    tone: "bg-goldenYellow",
+    photo: "/images/IMG_0927.jpeg",
+    alt: "Children in playroom learning environment",
+  },
+  {
+    name: "Toddler Program",
+    age: "2–4 years",
+    body: "Our toddler program embraces the natural curiosity and energy of young children. Through play-based learning and guided activities, we help toddlers develop essential skills while having fun.",
+    offers: [
+      "Daily creative activities: art, singing, and dancing",
+      "Outdoor play and gross motor skill development",
+      "Communication and language skill building",
+      "Social interaction and friendship building",
+    ],
+    tone: "bg-brightTeal",
+    photo: "/images/IMG_0921.jpeg",
+    alt: "Toddlers playing with colorful foam blocks",
+  },
+  {
+    name: "Preschool Program",
+    age: "4–5 years",
+    body: "Our preschool program prepares children for formal schooling through structured, engaging lessons. We focus on early literacy, numeracy, and social skills in a fun, supportive environment.",
+    offers: [
+      "Early literacy and phonics instruction",
+      "Basic math concepts and number recognition",
+      "Science exploration and discovery activities",
+      "Social lessons and school readiness skills",
+    ],
+    tone: "bg-skyBlue",
+    photo: "/images/IMG_0894.jpeg",
+    alt: "Preschooler drawing and creating art",
+  },
+];
+
+const H2 = "text-4xl sm:text-5xl lg:text-6xl font-semibold";
+
 export default function Programs() {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-pastelYellow to-lightCoral py-16 overflow-hidden">
-        {/* Decorative SVGs */}
-        <div className="absolute top-10 right-10 w-40 h-40 opacity-55 animate-float">
-          <Image
-            src="/images/kids head.svg"
-            alt=""
-            fill
-            className="object-contain"
-          />
-        </div>
-        <div className="absolute bottom-10 left-10 w-36 h-36 opacity-50 animate-float animation-delay-200">
-          <Image
-            src="/images/flower.svg"
-            alt=""
-            fill
-            className="object-contain"
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-heading font-bold text-white mb-4 animate-scaleIn">
-            Our Programs
-          </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto animate-scaleIn">
-            Age-appropriate programs designed to support every stage of
-            development
-          </p>
-        </div>
-      </section>
-
-      {/* Overview */}
-      <section className="py-16 bg-creamWhite">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xl text-navyText/80 leading-relaxed animate-fadeIn">
-            Mae's Childcare offers carefully designed programs that cater to
-            each developmental stage of your child's early years. From gentle
-            infant care to structured preschool learning, we ensure every child
-            receives the attention and stimulation they need to thrive.
-          </p>
-        </div>
-      </section>
-
-      {/* Infant Care */}
-      <section className="relative py-16 bg-white overflow-hidden">
-        {/* Decorative SVG */}
-        <div className="absolute bottom-10 right-10 w-48 h-48 opacity-45 animate-float animation-delay-300">
-          <Image
-            src="/images/baby with ball.svg"
-            alt=""
-            fill
-            className="object-contain"
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl animate-slideInLeft hover-lift">
-              <Image
-                src="/images/IMG_0927.jpeg"
-                alt="Children in playroom learning environment"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            <div className="animate-slideInRight">
-              <div className="inline-block bg-pastelYellow px-4 py-2 rounded-full text-navyText font-semibold mb-4 animate-scaleIn">
-                4 months – 2 years
-              </div>
-              <h2 className="text-4xl font-heading font-bold text-navyText mb-6">
-                <span className="text-5xl animate-bounce">👶</span> Infant Care
-              </h2>
-              <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                Our infant care program provides gentle, attentive care for your
-                precious little ones. We focus on creating a warm, secure
-                environment where babies can explore and develop at their own
-                pace.
-              </p>
-
-              <h3 className="text-xl font-heading font-bold text-navyText mb-3">
-                What We Offer:
-              </h3>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="text-softTeal mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Sensory play activities to stimulate development
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-softTeal mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Individualized feeding and napping schedules
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-softTeal mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Focus on emotional bonding and comfort
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-softTeal mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Daily reports on feeding, diapering, and activities
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Toddler Program */}
-      <section className="relative py-16 bg-gradient-to-br from-creamWhite to-softTeal/10 overflow-hidden">
-        {/* Decorative SVG */}
-        <div className="absolute top-10 left-10 w-40 h-40 opacity-50 animate-float">
-          <Image
-            src="/images/book.svg"
-            alt=""
-            fill
-            className="object-contain"
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 animate-slideInLeft">
-              <div className="inline-block bg-softTeal text-white px-4 py-2 rounded-full font-semibold mb-4 animate-scaleIn">
-                2–4 years
-              </div>
-              <h2 className="text-4xl font-heading font-bold text-navyText mb-6">
-                <span className="text-5xl animate-bounce animation-delay-200">
-                  🧸
-                </span>{" "}
-                Toddler Program
-              </h2>
-              <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                Our toddler program embraces the natural curiosity and energy of
-                young children. Through play-based learning and guided
-                activities, we help toddlers develop essential skills while
-                having fun.
-              </p>
-
-              <h3 className="text-xl font-heading font-bold text-navyText mb-3">
-                What We Offer:
-              </h3>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="text-lightCoral mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Daily creative activities: art, singing, and dancing
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-lightCoral mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Outdoor play and gross motor skill development
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-lightCoral mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Communication and language skill building
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-lightCoral mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Social interaction and friendship building
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl order-1 md:order-2 animate-slideInRight hover-lift">
-              <Image
-                src="/images/IMG_0921.jpeg"
-                alt="Toddlers playing with colorful foam blocks"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Preschool */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl animate-slideInLeft hover-lift">
-              <Image
-                src="/images/IMG_0894.jpeg"
-                alt="Preschooler drawing and creating art"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            <div className="animate-slideInRight">
-              <div className="inline-block bg-skyBlue px-4 py-2 rounded-full text-navyText font-semibold mb-4 animate-scaleIn">
-                4–5 years
-              </div>
-              <h2 className="text-4xl font-heading font-bold text-navyText mb-6">
-                <span className="text-5xl animate-bounce animation-delay-400">
-                  📚
-                </span>{" "}
-                Preschool Program
-              </h2>
-              <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                Our preschool program prepares children for formal schooling
-                through structured, engaging lessons. We focus on early
-                literacy, numeracy, and social skills in a fun, supportive
-                environment.
-              </p>
-
-              <h3 className="text-xl font-heading font-bold text-navyText mb-3">
-                What We Offer:
-              </h3>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="text-skyBlue mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Early literacy and phonics instruction
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-skyBlue mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Basic math concepts and number recognition
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-skyBlue mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Science exploration and discovery activities
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-skyBlue mr-2">✓</span>
-                  <span className="text-navyText/80">
-                    Social lessons and school readiness skills
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Special Arrangements */}
-      <section className="py-16 bg-navyText text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-heading font-bold mb-6">
-            Need a{" "}
-            <span className="text-pastelYellow">Custom Arrangement?</span>
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            We understand that every family has unique needs. For special
-            arrangements or part-time enrollment options, please contact us to
-            discuss how we can support your family.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-pastelYellow text-navyText px-8 py-4 rounded-full font-heading font-semibold text-lg hover:bg-opacity-90 transition shadow-lg"
+      {/* Intro */}
+      <section className="max-w-7xl mx-auto px-5 sm:px-8 pt-12 sm:pt-20 pb-16 lg:pb-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-end">
+          <h1
+            className="rise text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1]"
+            style={{ "--i": 0 } as React.CSSProperties}
           >
-            Contact Us Today
-          </a>
+            Our <span className="text-deepNavy">programs</span>
+          </h1>
+          <div
+            className="rise max-w-xl lg:justify-self-end"
+            style={{ "--i": 2 } as React.CSSProperties}
+          >
+            <p className="text-xl text-ink/80 leading-relaxed">
+              Age-appropriate programs designed to support every stage of
+              development.
+            </p>
+            <p className="mt-5 text-lg text-ink/80 leading-relaxed">
+              Mae&apos;s Childcare offers carefully designed programs that cater
+              to each developmental stage of your child&apos;s early years. From
+              gentle infant care to structured preschool learning, we ensure
+              every child receives the attention and stimulation they need to
+              thrive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Programs */}
+      <section className="rule-top">
+        {PROGRAMS.map((p, i) => {
+          const flip = i % 2 === 1;
+          return (
+            <article
+              key={p.name}
+              className="max-w-7xl mx-auto px-5 sm:px-8 py-16 lg:py-20 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+            >
+              <div
+                className={`reveal photo rounded-3xl relative aspect-[4/3] w-full ${
+                  flip ? "lg:order-2" : ""
+                }`}
+              >
+                <Image
+                  src={p.photo}
+                  alt={p.alt}
+                  fill
+                  sizes="(min-width: 1024px) 45vw, 90vw"
+                  className="object-cover"
+                />
+              </div>
+
+              <div
+                className={`reveal rounded-3xl p-7 sm:p-10 ${p.tone} ${
+                  flip ? "lg:order-1" : ""
+                }`}
+              >
+                <p className="font-heading text-sm font-semibold uppercase tracking-widest">
+                  {p.age}
+                </p>
+                <h2 className={`${H2} mt-4`}>{p.name}</h2>
+                <p className="mt-5 text-lg leading-relaxed text-ink/90">
+                  {p.body}
+                </p>
+                <h3 className="mt-8 text-xl font-semibold">What we offer</h3>
+                <ul className="mt-3 border-t border-ink/25">
+                  {p.offers.map((o) => (
+                    <li key={o} className="py-3 border-b border-ink/25">
+                      {o}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+
+      {/* Custom arrangements */}
+      <section className="bg-ink text-creamWhite">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 lg:py-20 grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-20 items-end">
+          <h2 className={`reveal ${H2}`}>Need a custom arrangement?</h2>
+          <div className="reveal">
+            <p className="text-xl text-creamWhite/80">
+              We understand that every family has unique needs. For special
+              arrangements or part-time enrollment options, please contact us to
+              discuss how we can support your family.
+            </p>
+            <Link href="/contact" className="btn btn-orange mt-8">
+              Contact Us Today
+            </Link>
+          </div>
         </div>
       </section>
     </div>

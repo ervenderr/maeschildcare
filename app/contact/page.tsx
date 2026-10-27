@@ -1,11 +1,63 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import PhoneInput from 'react-phone-number-input'
 import { isValidPhoneNumber } from 'libphonenumber-js'
 import 'react-phone-number-input/style.css'
 import './styles.css'
+
+const MAP_SRC =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3166734123746!2d-122.43905368468218!3d37.77381397975826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580a3a14dc72b%3A0x3b1aa39f6e1f2c5e!2s949%20Grove%20St%2C%20San%20Francisco%2C%20CA%2094117!5e0!3m2!1sen!2sus!4v1234567890'
+
+const FAQS = [
+  {
+    q: 'Can I schedule a tour before enrolling?',
+    a: 'Absolutely! We encourage all families to visit our facility, meet our staff, and see our programs in action before making a decision.',
+  },
+  {
+    q: 'What is your enrollment process?',
+    a: "Our enrollment process includes filling out an application, scheduling a visit, submitting required documents, and confirming your child's start date. Visit our Enrollment page for details.",
+  },
+  {
+    q: 'Do you offer part-time enrollment?',
+    a: 'Yes! We offer flexible enrollment options. Contact us to discuss a schedule that works for your family.',
+  },
+]
+
+const LABEL = 'block font-heading font-semibold text-lg mb-2'
+const HINT = 'mt-2 text-[1.0625rem] text-ink/70'
+const ROW = 'py-5 rule-bottom grid grid-cols-[7rem_1fr] gap-4'
+const DT = 'text-ink/70 text-base uppercase tracking-widest pt-1'
+
+const inputClass = (invalid: boolean) =>
+  `w-full min-h-12 px-4 py-3 rounded-xl border-[1.5px] bg-white text-ink text-[1.0625rem] placeholder:text-ink/50 focus:border-deepNavy transition-colors ${
+    invalid ? 'border-ink' : 'border-ink/30'
+  }`
+
+// Scoped to the form: restyles react-phone-number-input to match the other fields.
+const PHONE_CSS = `
+.contact-form .phone-input{border:1.5px solid rgb(10 37 64 / .3);border-radius:.75rem;min-height:3rem;flex-direction:row;transition:border-color 180ms}
+.contact-form .phone-input:focus-within{border-color:#004E89;outline:3px solid #004E89;outline-offset:3px}
+.contact-form .phone-input.phone-input-error{border-color:#0A2540!important}
+.contact-form .phone-input .PhoneInputCountry{background:#FFF9F0;border:0;border-right:1px solid rgb(10 37 64 / .16);padding:.5rem .75rem}
+.contact-form .phone-input .PhoneInputCountry:hover{background:#FED766}
+.contact-form .phone-input .PhoneInputCountrySelect{font-size:1.0625rem;color:#0A2540}
+.contact-form .phone-input .PhoneInputCountrySelect:focus{outline:3px solid #004E89}
+.contact-form .phone-input .PhoneInputInput{padding:.75rem 1rem;font-size:1.0625rem;color:#0A2540}
+.contact-form .phone-input .PhoneInputInput::placeholder{color:rgb(10 37 64 / .5)}
+`
+
+function FieldError({ id, message }: { id: string; message: string }) {
+  return (
+    <div id={id} aria-live="polite">
+      {message && (
+        <p className="mt-2 inline-block rounded-md bg-goldenYellow px-3 py-1.5 text-[1.0625rem] font-medium text-ink">
+          {message}
+        </p>
+      )}
+    </div>
+  )
+}
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -77,7 +129,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     // Honeypot check - if filled, it's likely a bot
     if (honeypot) {
       console.log('Bot detected')
@@ -137,7 +189,7 @@ export default function Contact() {
       ...formData,
       [name]: value
     })
-    
+
     // Clear validation error when user starts typing
     if (validationErrors[name as keyof typeof validationErrors]) {
       setValidationErrors({
@@ -152,7 +204,7 @@ export default function Contact() {
       ...formData,
       phone: value || ''
     })
-    
+
     // Clear validation error when user starts typing
     if (validationErrors.phone) {
       setValidationErrors({
@@ -178,7 +230,7 @@ export default function Contact() {
         error = validateMessage(formData.message)
         break
     }
-    
+
     if (error) {
       setValidationErrors({
         ...validationErrors,
@@ -189,276 +241,198 @@ export default function Contact() {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-lightCoral to-pastelYellow py-16 overflow-hidden">
-        {/* Decorative SVGs */}
-        <div className="absolute top-10 right-10 w-36 h-36 opacity-60 animate-float">
-          <Image src="/images/butterfly.svg" alt="" fill className="object-contain" />
-        </div>
-        <div className="absolute bottom-10 left-10 w-40 h-40 opacity-55 animate-float animation-delay-200">
-          <Image src="/images/flower.svg" alt="" fill className="object-contain" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-heading font-bold text-white mb-4 animate-scaleIn">
-            Get in Touch
-          </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto animate-scaleIn">
-            We'd love to hear from you! Reach out to schedule a visit or ask any questions.
-          </p>
-        </div>
+      {/* Intro */}
+      <section className="max-w-7xl mx-auto px-5 sm:px-8 pt-16 lg:pt-24 pb-12 lg:pb-16">
+        <h1 className="rise text-4xl sm:text-5xl lg:text-6xl font-semibold max-w-3xl" style={{ '--i': 0 } as React.CSSProperties}>
+          Get in <span className="text-deepNavy">Touch</span>
+        </h1>
+        <p className="rise mt-6 text-xl text-ink/80 max-w-2xl" style={{ '--i': 1 } as React.CSSProperties}>
+          We&apos;d love to hear from you! Reach out to schedule a visit or ask any questions.
+        </p>
       </section>
 
       {/* Contact Form and Info */}
-      <section className="relative py-16 bg-creamWhite overflow-hidden">
-        {/* Decorative SVG */}
-        <div className="absolute bottom-10 right-5 w-44 h-44 opacity-45 animate-float animation-delay-300">
-          <Image src="/images/kids head.svg" alt="" fill className="object-contain" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="bg-white p-8 rounded-3xl shadow-xl">
-              <h2 className="text-3xl font-heading font-bold text-navyText mb-6">
-                Send Us a <span className="text-lightCoral">Message</span>
-              </h2>
+      <section className="rule-top">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 lg:py-20 grid lg:grid-cols-[1.1fr_0.9fr] gap-14 lg:gap-24">
+          <div className="reveal">
+            <h2 className="text-4xl sm:text-5xl font-semibold">
+              Send Us a <span className="text-deepNavy">Message</span>
+            </h2>
 
-              {submitted && (
-                <div className="bg-softTeal/20 border-2 border-softTeal text-navyText p-4 rounded-2xl mb-6 animate-scaleIn">
-                  <p className="font-semibold">✓ Thank you! Your message has been sent successfully. We'll get back to you soon!</p>
-                </div>
-              )}
+            <style>{PHONE_CSS}</style>
+            <form onSubmit={handleSubmit} className="contact-form mt-10 space-y-7">
+              {/* Honeypot field - hidden from users, only bots will fill it */}
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                style={{ position: 'absolute', left: '-9999px' }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
 
-              {error && (
-                <div className="bg-red-50 border-2 border-red-400 text-red-700 p-4 rounded-2xl mb-6 animate-scaleIn">
-                  <p className="font-semibold">✗ {error}</p>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Honeypot field - hidden from users, only bots will fill it */}
+              <div>
+                <label htmlFor="name" className={LABEL}>Full Name *</label>
                 <input
                   type="text"
-                  name="website"
-                  value={honeypot}
-                  onChange={(e) => setHoneypot(e.target.value)}
-                  style={{ position: 'absolute', left: '-9999px' }}
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  onBlur={() => handleBlur('name')}
+                  required
+                  maxLength={100}
+                  className={inputClass(!!validationErrors.name)}
+                  placeholder="Enter your full name"
+                  autoComplete="name"
+                  aria-invalid={!!validationErrors.name}
+                  aria-describedby="name-error"
                 />
+                <FieldError id="name-error" message={validationErrors.name} />
+              </div>
 
-                <div>
-                  <label htmlFor="name" className="block text-navyText font-semibold mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    onBlur={() => handleBlur('name')}
-                    required
-                    maxLength={100}
-                    className={`w-full px-4 py-3 rounded-xl border-2 ${
-                      validationErrors.name 
-                        ? 'border-red-400 focus:border-red-500' 
-                        : 'border-gray-200 focus:border-softTeal'
-                    } focus:outline-none transition`}
-                    placeholder="Enter your full name"
-                    autoComplete="name"
-                  />
-                  {validationErrors.name && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                      <span>⚠️</span> {validationErrors.name}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-navyText font-semibold mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    onBlur={() => handleBlur('email')}
-                    required
-                    maxLength={254}
-                    className={`w-full px-4 py-3 rounded-xl border-2 ${
-                      validationErrors.email 
-                        ? 'border-red-400 focus:border-red-500' 
-                        : 'border-gray-200 focus:border-softTeal'
-                    } focus:outline-none transition`}
-                    placeholder="your.email@example.com"
-                    autoComplete="email"
-                  />
-                  {validationErrors.email && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                      <span>⚠️</span> {validationErrors.email}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-navyText font-semibold mb-2">
-                    Phone Number *
-                  </label>
-                  <PhoneInput
-                    international
-                    defaultCountry="US"
-                    value={formData.phone}
-                    onChange={handlePhoneChange}
-                    onBlur={() => handleBlur('phone')}
-                    className={`phone-input ${
-                      validationErrors.phone ? 'phone-input-error' : ''
-                    }`}
-                    placeholder="(123) 456-7890"
-                    autoComplete="tel"
-                  />
-                  {validationErrors.phone && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                      <span>⚠️</span> {validationErrors.phone}
-                    </p>
-                  )}
-                  <p className="mt-1 text-xs text-gray-500">
-                    Select your country code from the dropdown
-                  </p>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-navyText font-semibold mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    onBlur={() => handleBlur('message')}
-                    required
-                    rows={5}
-                    maxLength={5000}
-                    className={`w-full px-4 py-3 rounded-xl border-2 ${
-                      validationErrors.message 
-                        ? 'border-red-400 focus:border-red-500' 
-                        : 'border-gray-200 focus:border-softTeal'
-                    } focus:outline-none transition resize-none`}
-                    placeholder="Tell us about your needs or ask any questions..."
-                  />
-                  {validationErrors.message && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                      <span>⚠️</span> {validationErrors.message}
-                    </p>
-                  )}
-                  <p className="mt-1 text-xs text-gray-500 text-right">
-                    {formData.message.length} / 5000 characters
-                  </p>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-lightCoral text-white px-8 py-4 rounded-full font-heading font-semibold text-lg hover:bg-opacity-90 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {loading ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Sending...
-                    </span>
-                  ) : (
-                    'Send Message'
-                  )}
-                </button>
-
-                <p className="text-xs text-gray-500 text-center mt-4">
-                  🔒 Your information is secure and will never be shared with third parties.
-                </p>
-              </form>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-heading font-bold text-navyText mb-6">
-                  Contact <span className="text-softTeal">Information</span>
-                </h2>
-                <p className="text-lg text-navyText/80 mb-8">
-                  Feel free to reach out to us through any of the following methods. We're here to help!
+                <label htmlFor="email" className={LABEL}>Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  onBlur={() => handleBlur('email')}
+                  required
+                  maxLength={254}
+                  className={inputClass(!!validationErrors.email)}
+                  placeholder="your.email@example.com"
+                  autoComplete="email"
+                  aria-invalid={!!validationErrors.email}
+                  aria-describedby="email-error"
+                />
+                <FieldError id="email-error" message={validationErrors.email} />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className={LABEL}>Phone Number *</label>
+                <PhoneInput
+                  id="phone"
+                  international
+                  defaultCountry="US"
+                  value={formData.phone}
+                  onChange={handlePhoneChange}
+                  onBlur={() => handleBlur('phone')}
+                  className={`phone-input ${
+                    validationErrors.phone ? 'phone-input-error' : ''
+                  }`}
+                  placeholder="(123) 456-7890"
+                  autoComplete="tel"
+                  aria-invalid={!!validationErrors.phone}
+                  aria-describedby="phone-error phone-hint"
+                />
+                <FieldError id="phone-error" message={validationErrors.phone} />
+                <p id="phone-hint" className={HINT}>Select your country code from the dropdown</p>
+              </div>
+
+              <div>
+                <label htmlFor="message" className={LABEL}>Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  onBlur={() => handleBlur('message')}
+                  required
+                  rows={5}
+                  maxLength={5000}
+                  className={`${inputClass(!!validationErrors.message)} resize-y`}
+                  placeholder="Tell us about your needs or ask any questions..."
+                  aria-invalid={!!validationErrors.message}
+                  aria-describedby="message-error message-count"
+                />
+                <FieldError id="message-error" message={validationErrors.message} />
+                <p id="message-count" className={`${HINT} text-right`}>
+                  {formData.message.length} / 5000 characters
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-pastelYellow to-yellow-100 p-6 rounded-2xl shadow-lg">
-                  <div className="flex items-center gap-4">
-                    <div className="text-3xl sm:text-4xl flex-shrink-0">📞</div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="font-heading font-bold text-navyText text-lg sm:text-xl mb-2">Phone</h3>
-                      <p className="text-navyText/80 break-all">415-875-9847</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-softTeal to-green-100 p-6 rounded-2xl shadow-lg">
-                  <div className="flex items-center gap-4">
-                    <div className="text-3xl sm:text-4xl flex-shrink-0">✉️</div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="font-heading font-bold text-navyText text-lg sm:text-xl mb-2">Email</h3>
-                      <p className="text-navyText/80 break-all">maeknox949@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-skyBlue to-blue-100 p-6 rounded-2xl shadow-lg">
-                  <div className="flex items-start gap-4">
-                    <div className="text-3xl sm:text-4xl flex-shrink-0">📍</div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="font-heading font-bold text-navyText text-lg sm:text-xl mb-2">Address</h3>
-                      <p className="text-navyText/80">949 Grove Street</p>
-                      <p className="text-navyText/80">San Francisco, CA 94117</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-lightCoral to-red-100 p-6 rounded-2xl shadow-lg">
-                  <div className="flex items-start gap-4">
-                    <div className="text-3xl sm:text-4xl flex-shrink-0">🕒</div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="font-heading font-bold text-navyText text-lg sm:text-xl mb-2">Operating Hours</h3>
-                      <p className="text-navyText/80">Monday – Friday</p>
-                      <p className="text-navyText/80">8:30 AM – 5:30 PM</p>
-                      <p className="text-sm text-navyText/60 mt-2">Full Calendar Year</p>
-                    </div>
-                  </div>
-                </div>
+              <div role="status" aria-live="polite">
+                {submitted && (
+                  <p className="rounded-xl bg-skyBlue p-4 font-semibold text-ink">
+                    Thank you! Your message has been sent successfully. We&apos;ll get back to you soon!
+                  </p>
+                )}
+                {error && (
+                  <p className="rounded-xl bg-goldenYellow p-4 font-semibold text-ink">{error}</p>
+                )}
               </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <h3 className="font-heading font-bold text-navyText text-xl mb-3">License Information</h3>
-                <p className="text-navyText/80">License Number: <strong>384005044</strong></p>
-                <p className="text-sm text-navyText/60 mt-2">Fully licensed and regulated childcare facility</p>
+              <button
+                type="submit"
+                disabled={loading}
+                aria-busy={loading}
+                className="btn btn-orange w-full disabled:opacity-60 disabled:cursor-not-allowed disabled:pointer-events-none"
+              >
+                {loading ? 'Sending...' : 'Send Message'}
+              </button>
+
+              <p className="text-[1.0625rem] text-ink/70">
+                Your information is secure and will never be shared with third parties.
+              </p>
+            </form>
+          </div>
+
+          {/* Contact Information */}
+          <div className="reveal">
+            <h2 className="text-4xl sm:text-5xl font-semibold">
+              Contact <span className="text-deepNavy">Information</span>
+            </h2>
+            <p className="mt-6 text-xl text-ink/80 max-w-lg">
+              Feel free to reach out to us through any of the following methods. We&apos;re here to help!
+            </p>
+
+            <dl className="mt-10 rule-top">
+              <div className={ROW}>
+                <dt className={DT}>Phone</dt>
+                <dd><a href="tel:+14158759847" className="link-draw">415-875-9847</a></dd>
               </div>
-            </div>
+              <div className={ROW}>
+                <dt className={DT}>Email</dt>
+                <dd><a href="mailto:maeknox949@gmail.com" className="link-draw break-all">maeknox949@gmail.com</a></dd>
+              </div>
+              <div className={ROW}>
+                <dt className={DT}>Address</dt>
+                <dd>949 Grove Street<br />San Francisco, CA 94117</dd>
+              </div>
+              <div className={ROW}>
+                <dt className={DT}>Hours</dt>
+                <dd>
+                  Monday – Friday<br />8:30 AM – 5:30 PM
+                  <span className="block mt-1 text-ink/70">Full Calendar Year</span>
+                </dd>
+              </div>
+              <div className={ROW}>
+                <dt className={DT}>License</dt>
+                <dd>
+                  License Number: <strong>384005044</strong>
+                  <span className="block mt-1 text-ink/70">Fully licensed and regulated childcare facility</span>
+                </dd>
+              </div>
+            </dl>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-12">
-            Find <span className="text-lightCoral">Us</span>
+      {/* Map */}
+      <section className="rule-top">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 lg:py-20">
+          <h2 className="reveal text-4xl sm:text-5xl font-semibold">
+            Find <span className="text-deepNavy">Us</span>
           </h2>
 
-          <div className="rounded-3xl overflow-hidden shadow-2xl h-96">
+          <div className="reveal mt-10 rounded-3xl overflow-hidden h-96 border border-ink/15">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3166734123746!2d-122.43905368468218!3d37.77381397975826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580a3a14dc72b%3A0x3b1aa39f6e1f2c5e!2s949%20Grove%20St%2C%20San%20Francisco%2C%20CA%2094117!5e0!3m2!1sen!2sus!4v1234567890"
+              src={MAP_SRC}
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -469,47 +443,27 @@ export default function Contact() {
             />
           </div>
 
-          <p className="text-center text-navyText/60 mt-6">
+          <p className="mt-6 text-ink/80 max-w-2xl">
             Located in the vibrant Hayes Valley neighborhood of San Francisco, easily accessible and close to public transit
           </p>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-gradient-to-br from-creamWhite to-pastelYellow/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-12">
-            Quick <span className="text-softTeal">Questions?</span>
+      <section className="rule-top">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 lg:py-20 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-24">
+          <h2 className="reveal text-4xl sm:text-5xl font-semibold">
+            Quick <span className="text-deepNavy">Questions?</span>
           </h2>
 
-          <div className="space-y-4">
-            <div className="bg-white p-6 rounded-2xl shadow-lg">
-              <h3 className="font-heading font-bold text-navyText text-lg mb-2">
-                Can I schedule a tour before enrolling?
-              </h3>
-              <p className="text-navyText/80">
-                Absolutely! We encourage all families to visit our facility, meet our staff, and see our programs in action before making a decision.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-lg">
-              <h3 className="font-heading font-bold text-navyText text-lg mb-2">
-                What is your enrollment process?
-              </h3>
-              <p className="text-navyText/80">
-                Our enrollment process includes filling out an application, scheduling a visit, submitting required documents, and confirming your child's start date. Visit our Enrollment page for details.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-lg">
-              <h3 className="font-heading font-bold text-navyText text-lg mb-2">
-                Do you offer part-time enrollment?
-              </h3>
-              <p className="text-navyText/80">
-                Yes! We offer flexible enrollment options. Contact us to discuss a schedule that works for your family.
-              </p>
-            </div>
-          </div>
+          <dl className="reveal rule-top">
+            {FAQS.map(({ q, a }) => (
+              <div key={q} className="py-6 rule-bottom">
+                <dt className="font-heading font-semibold text-xl">{q}</dt>
+                <dd className="mt-2 text-ink/80">{a}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
     </div>

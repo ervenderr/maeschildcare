@@ -7,340 +7,235 @@ export const metadata: Metadata = {
     "Learn about Mae's Childcare mission, philosophy, and our story of providing quality bilingual childcare in San Francisco, CA.",
 };
 
+const PHILOSOPHY = [
+  {
+    title: "Child-Centered Learning",
+    body: "We recognize that every child is unique and learns at their own pace. Our programs are designed to meet individual needs and interests, fostering natural curiosity and creativity.",
+  },
+  {
+    title: "Social & Emotional Growth",
+    body: "We prioritize emotional intelligence and social skills through positive interactions, conflict resolution, and building strong relationships with peers and caregivers.",
+  },
+  {
+    title: "Safe & Inclusive Community",
+    body: "We create a welcoming environment where all families feel valued and supported. Safety, respect, and kindness are the foundation of our community.",
+  },
+];
+
+const CURRICULUM = [
+  {
+    title: "Art-Based Learning",
+    body: "Our program introduces children to letters, numbers, shapes, and colors through hands-on art and playful learning. We encourage creativity through art activities that inspire imagination and self-expression.",
+    tone: "bg-goldenYellow",
+    offset: "",
+  },
+  {
+    title: "Bilingual Immersion",
+    body: "We encourage bilingual learning in Filipino (Tagalog) and English, helping children build early language skills that will benefit them throughout their lives. Language immersion builds strong communication abilities.",
+    tone: "bg-skyBlue",
+    offset: "md:mt-12",
+  },
+  {
+    title: "Age-Appropriate Play",
+    body: "Infants and toddlers explore with age-appropriate toys that inspire curiosity and creativity. Our mixed-age environment promotes cooperation, empathy, and peer learning among children.",
+    tone: "bg-brightTeal",
+    offset: "",
+  },
+  {
+    title: "Daily Enrichment",
+    body: "Each day is filled with fun and enriching activities—from alphabet and number time to arts and crafts, reading, music, movement, and playtime—all designed to make learning joyful!",
+    tone: "bg-white ring-1 ring-ink/15",
+    offset: "md:mt-12",
+  },
+];
+
+const HIGHLIGHTS = [
+  ["Art-Based Learning", "Encouraging creativity through hands-on art activities"],
+  ["Creative Curriculum", "A well-rounded approach supporting every child's development"],
+  ["Language Immersion", "Building communication skills in English and Filipino"],
+  ["Movement, Music & Academics", "Blending play, rhythm, and learning"],
+  ["Mixed-Age Environment", "Promoting cooperation and peer learning"],
+  ["Nutritious Meals", "Daily healthy meals provided"],
+];
+
+const VALUES = [
+  ["Love", "Every interaction is rooted in care and compassion"],
+  ["Excellence", "We strive for the highest quality in all we do"],
+  ["Creativity", "We encourage imagination and innovative thinking"],
+  ["Joy", "Learning should be fun and filled with laughter"],
+];
+
+const WRAP = "max-w-7xl mx-auto px-5 sm:px-8";
+const H2 = "text-4xl sm:text-5xl lg:text-6xl font-semibold";
+
 export default function About() {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-softTeal to-skyBlue py-16 overflow-hidden">
-        {/* Decorative SVGs */}
-        <div className="absolute top-10 left-10 w-36 h-36 opacity-55 animate-float">
-          <Image
-            src="/images/butterfly.svg"
-            alt=""
-            fill
-            className="object-contain"
-          />
-        </div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 opacity-50 animate-float animation-delay-200">
-          <Image
-            src="/images/cloud.svg"
-            alt=""
-            fill
-            className="object-contain"
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex justify-center mb-6 animate-scaleIn">
-            <div className="relative w-36 h-32 rounded-md bg-creamWhite">
-              <Image
-                src="/images/name.png"
-                alt="Mae's Childcare Logo"
-                fill
-                className="object-contain drop-shadow-lg"
-                priority
-              />
-            </div>
-          </div>
-          <h1 className="text-5xl font-heading font-bold text-white mb-4 animate-scaleIn">
-            About Mae's Childcare
-          </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto animate-scaleIn">
-            A nurturing environment where children learn, play, and grow at
-            their own pace
+      {/* Intro */}
+      <section className={`${WRAP} pt-14 sm:pt-20 pb-16 lg:pb-20`}>
+        <h1
+          className="rise max-w-4xl text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1] tracking-[-0.035em]"
+          style={{ "--i": 0 } as React.CSSProperties}
+        >
+          About <span className="text-deepNavy">Mae&apos;s Childcare</span>
+        </h1>
+        <p
+          className="rise mt-7 max-w-xl text-xl leading-relaxed text-ink/80"
+          style={{ "--i": 2 } as React.CSSProperties}
+        >
+          A nurturing environment where children learn, play, and grow at their
+          own pace
+        </p>
+      </section>
+
+      {/* Mission */}
+      <section className="rule-top">
+        <div className={`${WRAP} py-16 lg:py-20 grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-20`}>
+          <h2 className={`reveal ${H2}`}>
+            Our <span className="text-deepNavy">Mission</span>
+          </h2>
+          <p className="reveal font-heading text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-ink">
+            At Mae&apos;s Childcare, our mission is to provide a nurturing
+            environment where children can learn, play, and grow at their own
+            pace. We believe every child deserves personalized care and joyful
+            learning experiences.
           </p>
         </div>
       </section>
 
-      {/* Mission Statement */}
-      <section className="py-16 bg-creamWhite">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-10 rounded-3xl shadow-xl">
-            <h2 className="text-3xl font-heading font-bold text-navyText mb-6 text-center">
-              Our <span className="text-lightCoral">Mission</span>
-            </h2>
-            <p className="text-xl text-navyText/80 text-center leading-relaxed italic">
-              At Mae's Childcare, our mission is to provide a nurturing
-              environment where children can learn, play, and grow at their own
-              pace. We believe every child deserves personalized care and joyful
-              learning experiences.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Philosophy */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-12">
-            Our <span className="text-softTeal">Philosophy</span>
+      <section className="bg-white/60 rule-top rule-bottom">
+        <div className={`${WRAP} py-16 lg:py-20 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-20`}>
+          <h2 className={`reveal ${H2} lg:sticky lg:top-32 self-start`}>
+            Our <span className="text-deepNavy">Philosophy</span>
           </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-pastelYellow to-yellow-50 p-8 rounded-3xl shadow-lg">
-              <div className="text-5xl mb-4">🌱</div>
-              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">
-                Child-Centered Learning
-              </h3>
-              <p className="text-navyText/80">
-                We recognize that every child is unique and learns at their own
-                pace. Our programs are designed to meet individual needs and
-                interests, fostering natural curiosity and creativity.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-skyBlue to-blue-50 p-8 rounded-3xl shadow-lg">
-              <div className="text-5xl mb-4">❤️</div>
-              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">
-                Social & Emotional Growth
-              </h3>
-              <p className="text-navyText/80">
-                We prioritize emotional intelligence and social skills through
-                positive interactions, conflict resolution, and building strong
-                relationships with peers and caregivers.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-softTeal to-green-50 p-8 rounded-3xl shadow-lg">
-              <div className="text-5xl mb-4">🤝</div>
-              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">
-                Safe & Inclusive Community
-              </h3>
-              <p className="text-navyText/80">
-                We create a welcoming environment where all families feel valued
-                and supported. Safety, respect, and kindness are the foundation
-                of our community.
-              </p>
-            </div>
-          </div>
+          <ul className="rule-top">
+            {PHILOSOPHY.map((p) => (
+              <li
+                key={p.title}
+                className="reveal rule-bottom py-7 grid sm:grid-cols-[0.8fr_1.2fr] gap-2 sm:gap-8"
+              >
+                <h3 className="text-2xl font-semibold">{p.title}</h3>
+                <p className="text-ink/80">{p.body}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-16 bg-gradient-to-br from-creamWhite to-pastelYellow/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/IMG_0878.jpeg"
-                alt="Mae's Childcare indoor playroom facility"
-                fill
-                className="object-cover"
-              />
-            </div>
+      {/* Story */}
+      <section className={`${WRAP} py-16 lg:py-20`}>
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-start">
+          <div className="reveal photo rounded-3xl relative aspect-[4/5] max-w-lg w-full">
+            <Image
+              src="/images/IMG_0878.jpeg"
+              alt="Mae's Childcare indoor playroom facility"
+              fill
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="object-cover"
+            />
+          </div>
 
-            <div>
-              <h2 className="text-4xl font-heading font-bold text-navyText mb-6">
-                Our <span className="text-lightCoral">Story</span>
-              </h2>
-              <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
-                Mae's Childcare was founded by <strong>Ms. Mae</strong>, an
+          <div className="reveal">
+            <h2 className={H2}>
+              Our <span className="text-deepNavy">Story</span>
+            </h2>
+            <div className="mt-8 space-y-5 max-w-[36rem] text-lg text-ink/80">
+              <p>
+                Mae&apos;s Childcare was founded by <strong>Ms. Mae</strong>, an
                 experienced early childhood educator who believes in holistic
                 development. With a passion for nurturing young minds through
                 play and discovery, Mae has dedicated over a decade to creating
                 meaningful learning experiences for children.
               </p>
-              <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
+              <p>
                 What started as a small home-based center has grown into a
                 trusted learning space for families in our community. Our
                 commitment to quality care, personalized attention, and creating
-                a home-away-from-home environment has made Mae's Childcare a
-                beloved part of many families' lives.
+                a home-away-from-home environment has made Mae&apos;s Childcare a
+                beloved part of many families&apos; lives.
               </p>
-              <p className="text-lg text-navyText/80 mb-6 leading-relaxed">
+              <p>
                 Today, we continue to uphold the values that Mae established
                 from the beginning: love, respect, learning, and joy. Every
                 child who walks through our doors becomes part of our extended
                 family.
               </p>
-
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <p className="text-navyText font-heading font-semibold text-xl mb-2">
-                  "Every child is a gift, and it's our privilege to help them
-                  discover their unique potential."
-                </p>
-                <p className="text-navyText/60">— Ms. Mae, Founder</p>
-              </div>
             </div>
+
+            <figure className="mt-10 max-w-[36rem] rule-top pt-6">
+              <blockquote className="font-heading text-2xl font-semibold leading-snug text-ink">
+                &ldquo;Every child is a gift, and it&apos;s our privilege to help
+                them discover their unique potential.&rdquo;
+              </blockquote>
+              <figcaption className="mt-3 text-ink/70">
+                — Ms. Mae, Founder
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      {/* Our Curriculum */}
-      <section className="relative py-16 bg-white overflow-hidden">
-        {/* Decorative SVGs */}
-        <div className="absolute top-20 right-5 w-40 h-40 opacity-50 animate-float">
-          <Image
-            src="/images/book.svg"
-            alt=""
-            fill
-            className="object-contain"
-          />
-        </div>
-        <div className="absolute bottom-20 left-5 w-48 h-48 opacity-45 animate-float animation-delay-300">
-          <Image
-            src="/images/baby with ball.svg"
-            alt=""
-            fill
-            className="object-contain"
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-heading font-bold text-navyText text-center mb-4">
-            Our <span className="text-lightCoral">Curriculum</span>
-          </h2>
-          <p className="text-center text-navyText/70 mb-12 text-lg max-w-3xl mx-auto">
-            We use a Creative Curriculum approach that makes learning joyful and
-            meaningful for every child
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gradient-to-br from-pastelYellow to-yellow-50 p-8 rounded-3xl shadow-lg hover-lift transition">
-              <div className="text-5xl mb-4">🎨</div>
-              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">
-                Art-Based Learning
-              </h3>
-              <p className="text-navyText/80 leading-relaxed">
-                Our program introduces children to letters, numbers, shapes, and
-                colors through hands-on art and playful learning. We encourage
-                creativity through art activities that inspire imagination and
-                self-expression.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-skyBlue to-blue-50 p-8 rounded-3xl shadow-lg hover-lift transition">
-              <div className="text-5xl mb-4">🌍</div>
-              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">
-                Bilingual Immersion
-              </h3>
-              <p className="text-navyText/80 leading-relaxed">
-                We encourage bilingual learning in Filipino (Tagalog) and
-                English, helping children build early language skills that will
-                benefit them throughout their lives. Language immersion builds
-                strong communication abilities.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-softTeal to-green-50 p-8 rounded-3xl shadow-lg hover-lift transition">
-              <div className="text-5xl mb-4">🧸</div>
-              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">
-                Age-Appropriate Play
-              </h3>
-              <p className="text-navyText/80 leading-relaxed">
-                Infants and toddlers explore with age-appropriate toys that
-                inspire curiosity and creativity. Our mixed-age environment
-                promotes cooperation, empathy, and peer learning among children.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-lightCoral to-red-50 p-8 rounded-3xl shadow-lg hover-lift transition">
-              <div className="text-5xl mb-4">🎵</div>
-              <h3 className="text-2xl font-heading font-bold text-navyText mb-4">
-                Daily Enrichment
-              </h3>
-              <p className="text-navyText/80 leading-relaxed">
-                Each day is filled with fun and enriching activities—from
-                alphabet and number time to arts and crafts, reading, music,
-                movement, and playtime—all designed to make learning joyful!
-              </p>
-            </div>
+      {/* Curriculum */}
+      <section className="bg-white/60 rule-top rule-bottom">
+        <div className={`${WRAP} py-16 lg:py-20`}>
+          <div className="reveal grid lg:grid-cols-2 gap-6 lg:gap-16 items-end">
+            <h2 className={H2}>
+              Our <span className="text-deepNavy">Curriculum</span>
+            </h2>
+            <p className="text-lg text-ink/80 max-w-md lg:justify-self-end">
+              We use a Creative Curriculum approach that makes learning joyful
+              and meaningful for every child
+            </p>
           </div>
 
-          <div className="bg-gradient-to-br from-pastelYellow/20 to-skyBlue/20 p-10 rounded-3xl">
-            <h3 className="text-3xl font-heading font-bold text-navyText mb-6 text-center">
+          <div className="mt-12 lg:mt-16 grid md:grid-cols-2 gap-5 lg:gap-6 items-start">
+            {CURRICULUM.map((c) => (
+              <article
+                key={c.title}
+                className={`reveal chip min-h-72! ${c.tone} ${c.offset}`}
+              >
+                <h3 className="mt-auto text-3xl font-semibold">{c.title}</h3>
+                <p className="mt-4 leading-relaxed text-ink/85">{c.body}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-16 lg:mt-24 grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-20">
+            <h3 className="reveal text-3xl sm:text-4xl font-semibold">
               Program Highlights
             </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">✓</span>
-                <p className="text-lg text-navyText/80">
-                  <strong>Art-Based Learning</strong> – Encouraging creativity
-                  through hands-on art activities
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">✓</span>
-                <p className="text-lg text-navyText/80">
-                  <strong>Creative Curriculum</strong> – A well-rounded approach
-                  supporting every child's development
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">✓</span>
-                <p className="text-lg text-navyText/80">
-                  <strong>Language Immersion</strong> – Building communication
-                  skills in English and Filipino
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">✓</span>
-                <p className="text-lg text-navyText/80">
-                  <strong>Movement, Music & Academics</strong> – Blending play,
-                  rhythm, and learning
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">✓</span>
-                <p className="text-lg text-navyText/80">
-                  <strong>Mixed-Age Environment</strong> – Promoting cooperation
-                  and peer learning
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">✓</span>
-                <p className="text-lg text-navyText/80">
-                  <strong>Nutritious Meals</strong> – Daily healthy meals
-                  provided
-                </p>
-              </div>
-            </div>
+            <ul className="reveal grid md:grid-cols-2 gap-x-10 rule-top">
+              {HIGHLIGHTS.map(([title, body]) => (
+                <li key={title} className="rule-bottom py-5 text-ink/80">
+                  <strong className="font-heading text-lg font-semibold text-ink">
+                    {title}
+                  </strong>{" "}
+                  – {body}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-16 bg-navyText text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-heading font-bold text-center mb-12">
-            Our Core <span className="text-pastelYellow">Values</span>
+      {/* Values: the page's one full-strength colour field */}
+      <section className="bg-ink text-creamWhite">
+        <div className={`${WRAP} py-16 lg:py-20`}>
+          <h2 className={`reveal ${H2}`}>
+            Our Core <span className="text-goldenYellow">Values</span>
           </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="text-6xl mb-4">💛</div>
-              <h3 className="text-xl font-heading font-bold mb-2">Love</h3>
-              <p className="text-gray-300">
-                Every interaction is rooted in care and compassion
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-6xl mb-4">🌟</div>
-              <h3 className="text-xl font-heading font-bold mb-2">
-                Excellence
-              </h3>
-              <p className="text-gray-300">
-                We strive for the highest quality in all we do
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-6xl mb-4">🎨</div>
-              <h3 className="text-xl font-heading font-bold mb-2">
-                Creativity
-              </h3>
-              <p className="text-gray-300">
-                We encourage imagination and innovative thinking
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-6xl mb-4">🌈</div>
-              <h3 className="text-xl font-heading font-bold mb-2">Joy</h3>
-              <p className="text-gray-300">
-                Learning should be fun and filled with laughter
-              </p>
-            </div>
-          </div>
+          <ul className="mt-12 lg:mt-16 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-creamWhite/20">
+            {VALUES.map(([title, body]) => (
+              <li
+                key={title}
+                className="reveal py-6 lg:py-8 lg:pr-8 border-b border-creamWhite/20 lg:border-b-0"
+              >
+                <h3 className="text-3xl font-semibold">{title}</h3>
+                <p className="mt-3 text-creamWhite/80">{body}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </div>
